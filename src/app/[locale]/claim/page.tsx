@@ -66,12 +66,17 @@ export default function ClaimPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#0b1020]">
+    <div className="min-h-screen text-goc-ink relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-32 -left-24 h-[260px] w-[260px] rounded-full bg-goc-primary/15 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-[240px] w-[240px] rounded-full bg-goc-secondary/15 blur-[120px]" />
+        <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:48px_48px]" />
+      </div>
       <Navigation variant="claim" />
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-28">
-        <div className="mb-12 text-center">
+      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
+        <div className="mb-8 text-center">
           <div className="flex justify-center mb-6">
             <div className="rounded-2xl bg-goc-surface border border-goc-border shadow-goc-sm p-4">
               <Image
@@ -84,10 +89,10 @@ export default function ClaimPage() {
             </div>
           </div>
           
-          <h1 className="text-3xl md:text-4xl font-bold text-goc-ink mb-3">
+          <h1 className="text-2xl md:text-3xl font-semibold text-goc-ink mb-2">
             {t('title')}
           </h1>
-          <p className="text-goc-muted text-lg mb-6">
+          <p className="text-goc-muted text-sm md:text-base mb-4">
             {t('description')}
           </p>
           
@@ -110,17 +115,17 @@ export default function ClaimPage() {
         <div className="space-y-8">
           <StepIndicator />
 
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.6fr),minmax(0,0.9fr)] gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.5fr),minmax(0,0.9fr)] gap-6">
             <ClaimCard />
             <TokenInfoCard />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <AddressInputCard />
             <WalletCard />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <TokenStatCard
               title="Token Contract"
               description="Verified on Ethereum"

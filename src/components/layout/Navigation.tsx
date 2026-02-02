@@ -4,7 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
-import { WalletBadge } from '@/components/ui/WalletBadge';
 import { useTranslations } from 'next-intl';
 
 interface NavigationProps {
@@ -19,22 +18,18 @@ export function Navigation({ showCTA = true }: NavigationProps) {
     // All pages get the same navigation links
     return (
       <nav className="hidden md:flex items-center space-x-1">
-        <Link href="/" className="px-4 py-2 rounded-full text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
+        <Link href="/" className="px-3 py-2 rounded-lg text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
           {t('home')}
         </Link>
-        <Link href="/claim" className="px-4 py-2 rounded-full text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
+        <Link href="/claim" className="px-3 py-2 rounded-lg text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
           {t('claim')}
         </Link>
         {/* @ts-expect-error - Hash links are valid but types are strict */}
-        <Link href="/#how-it-works" className="px-4 py-2 rounded-full text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
+        <Link href="/#how-it-works" className="px-3 py-2 rounded-lg text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
           How it works
         </Link>
         {/* @ts-expect-error - Hash links are valid but types are strict */}
-        <Link href="/#about" className="px-4 py-2 rounded-full text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
-          {t('about')}
-        </Link>
-        {/* @ts-expect-error - Hash links are valid but types are strict */}
-        <Link href="/#faq" className="px-4 py-2 rounded-full text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
+        <Link href="/#faq" className="px-3 py-2 rounded-lg text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt transition-all duration-200 font-medium text-sm">
           {t('faq')}
         </Link>
       </nav>
@@ -59,9 +54,9 @@ export function Navigation({ showCTA = true }: NavigationProps) {
 
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-goc-border/70 bg-goc-surface/80 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-goc-border/60 bg-[#0b1020]/80 backdrop-blur-xl">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center group">
             <Image
               src="/goc-logo.svg"
@@ -72,7 +67,7 @@ export function Navigation({ showCTA = true }: NavigationProps) {
             />
             <div className="ml-3">
               <div className="text-sm font-semibold text-goc-ink">GOC Claim Portal</div>
-              <div className="text-xs text-goc-muted">Secure token distribution</div>
+              <div className="text-[11px] text-goc-muted">Secure token distribution</div>
             </div>
           </Link>
           
@@ -80,9 +75,6 @@ export function Navigation({ showCTA = true }: NavigationProps) {
             {getNavLinks()}
             <div className="h-6 w-px bg-goc-border hidden md:block"></div>
             <div className="flex items-center gap-4">
-              <div className="hidden md:block">
-                <WalletBadge />
-              </div>
               <LanguageSwitcher />
               {getCTA()}
             </div>
