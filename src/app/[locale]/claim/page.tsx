@@ -1,20 +1,70 @@
 'use client';
 
-import React from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import { AddressInputCard } from '@/components/claim/AddressInputCard';
 import { ClaimCard } from '@/components/claim/ClaimCard';
+import { StepIndicator } from '@/components/claim/StepIndicator';
 import { TokenInfoCard } from '@/components/claim/TokenInfoCard';
 import { WalletCard } from '@/components/claim/WalletCard';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
+import { TokenStatCard } from '@/components/ui/TokenStatCard';
+import { InfoRow } from '@/components/ui/InfoRow';
+import { CopyButton } from '@/components/ui/CopyButton';
+import { ToastStack, ToastItem } from '@/components/ui/Toast';
+import { LoadingOverlay } from '@/components/ui/LoadingOverlay';
 import { useTranslations } from 'next-intl';
 import { useClaim } from '@/hooks/useClaim';
+import { useWallet } from '@/hooks/useWallet';
+import { TOKEN_ADDRESS, DISTRIBUTION_WALLET } from '@/config/token';
 
 export default function ClaimPage() {
   const t = useTranslations('claim');
-  const { reset } = useClaim();
+  const { reset, loading, isClaimed, claimTxHash, errors } = useClaim();
+  const { isConnected, isConnecting, isSwitching } = useWallet();
+  const [toasts, setToasts] = useState<ToastItem[]>([]);
+  const prevConnected = useRef(isConnected);
+  const prevClaimed = useRef(isClaimed);
+  const prevClaimError = useRef('');
+
+  const shorten = (value: string) => `${value.slice(0, 6)}...${value.slice(-4)}`;
+
+  const addToast = useCallback((toast: Omit<ToastItem, 'id'>) => {
+    const id = `${Date.now()}-${Math.random()}`;
+    setToasts(prev => [...prev, { ...toast, id }]);
+    setTimeout(() => {
+      setToasts(prev => prev.filter(item => item.id !== id));
+    }, 3500);
+  }, []);
+
+  useEffect(() => {
+    if (!prevConnected.current && isConnected) {
+      addToast({ title: 'Wallet connected', message: 'Ready to proceed with claim', variant: 'success' });
+    }
+    prevConnected.current = isConnected;
+  }, [addToast, isConnected]);
+
+  useEffect(() => {
+    if (!prevClaimed.current && isClaimed && claimTxHash) {
+      addToast({ title: 'Claim successful', message: 'Tokens sent to your wallet', variant: 'success' });
+    }
+    prevClaimed.current = isClaimed;
+  }, [addToast, claimTxHash, isClaimed]);
+
+  useEffect(() => {
+    if (errors.claim && errors.claim !== prevClaimError.current) {
+      addToast({ title: 'Claim failed', message: errors.claim, variant: 'error' });
+      prevClaimError.current = errors.claim;
+    }
+  }, [addToast, errors.claim]);
+
+  const isBusy = useMemo(
+    () => isConnecting || isSwitching || Object.values(loading).some(Boolean),
+    [isConnecting, isSwitching, loading]
+  );
+
   return (
     <div className="min-h-screen bg-[#0b1020]">
       <Navigation variant="claim" />
@@ -57,14 +107,69 @@ export default function ClaimPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr),minmax(0,1fr)] gap-8">
-          <div className="space-y-6">
-            <AddressInputCard />
+        <div className="space-y-8">
+          <StepIndicator />
+
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.6fr),minmax(0,0.9fr)] gap-8">
             <ClaimCard />
-          </div>
-          <div className="space-y-6">
             <TokenInfoCard />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <AddressInputCard />
             <WalletCard />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <TokenStatCard
+              title="Token Contract"
+              description="Verified on Ethereum"
+              icon={<span>🔗</span>}
+            >
+              <InfoRow
+                label="Address"
+                value={shorten(TOKEN_ADDRESS)}
+                mono
+                action={<CopyButton value={TOKEN_ADDRESS} label="token contract" />}
+              />
+            </TokenStatCard>
+
+            <TokenStatCard
+              title="Distributor Wallet"
+              description="Claim source wallet"
+              icon={<span>🧾</span>}
+            >
+              <InfoRow
+                label="Address"
+                value={shorten(DISTRIBUTION_WALLET)}
+                mono
+                action={<CopyButton value={DISTRIBUTION_WALLET} label="distribution wallet" />}
+              />
+            </TokenStatCard>
+
+            <TokenStatCard
+              title="Claim Instructions"
+              description="Complete the steps"
+              icon={<span>✨</span>}
+            >
+              <ul className="text-xs text-goc-muted space-y-2">
+                <li>• Verify your email and set a recipient wallet.</li>
+                <li>• Confirm eligibility and submit your claim.</li>
+                <li>• Tokens arrive after on-chain confirmation.</li>
+              </ul>
+            </TokenStatCard>
+
+            <TokenStatCard
+              title="Security Notice"
+              description="Stay safe"
+              icon={<span>🛡️</span>}
+            >
+              <ul className="text-xs text-goc-muted space-y-2">
+                <li>• Only claim from the official portal.</li>
+                <li>• Never share verification codes.</li>
+                <li>• Claims are one-time per allocation.</li>
+              </ul>
+            </TokenStatCard>
           </div>
         </div>
       </main>
@@ -99,6 +204,9 @@ export default function ClaimPage() {
       </section>
 
       <Footer variant="minimal" />
+
+      <ToastStack toasts={toasts} onDismiss={(id) => setToasts(prev => prev.filter(t => t.id !== id))} />
+      <LoadingOverlay active={isBusy} message="Confirm the transaction in your wallet." />
     </div>
   );
 }

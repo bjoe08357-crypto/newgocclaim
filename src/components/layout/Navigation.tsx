@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { WalletBadge } from '@/components/ui/WalletBadge';
 import { useTranslations } from 'next-intl';
 
 interface NavigationProps {
@@ -79,6 +80,9 @@ export function Navigation({ showCTA = true }: NavigationProps) {
             {getNavLinks()}
             <div className="h-6 w-px bg-goc-border hidden md:block"></div>
             <div className="flex items-center gap-4">
+              <div className="hidden md:block">
+                <WalletBadge />
+              </div>
               <LanguageSwitcher />
               {getCTA()}
             </div>

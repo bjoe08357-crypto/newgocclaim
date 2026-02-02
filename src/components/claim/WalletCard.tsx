@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Card, CardHeader, CardContent } from '@/components/ui/Card';
+import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
+import { GradientButton } from '@/components/ui/GradientButton';
 import { Pill } from '@/components/ui/Pill';
 import { useWallet } from '@/hooks/useWallet';
 import { useTranslations } from 'next-intl';
@@ -25,30 +26,28 @@ export function WalletCard() {
   };
 
   return (
-    <Card>
-      <CardHeader>
+    <GlassCard>
+      <div className="p-6 space-y-4">
         <div className="flex items-center space-x-3">
-          <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-goc-primary border border-blue-100">
+          <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-goc-primary/15 text-goc-primary border border-goc-primary/30">
             Optional
           </span>
           <h2 className="text-lg font-semibold text-goc-ink">
             {t('title')}
           </h2>
         </div>
-      </CardHeader>
-      <CardContent className="space-y-4">
         {!isConnected ? (
           <>
             <p className="text-sm text-goc-muted">
               {t('description')}
             </p>
-            <Button
+            <GradientButton
               onClick={connectWallet}
               loading={isConnecting}
               className="w-full"
             >
               {t('connectButton')}
-            </Button>
+            </GradientButton>
           </>
         ) : isWrongNetwork ? (
           <>
@@ -72,13 +71,13 @@ export function WalletCard() {
             <p className="text-sm text-goc-muted">
               Please switch to Ethereum Mainnet to continue.
             </p>
-            <Button
+            <GradientButton
               onClick={switchToMainnet}
               loading={isSwitching}
               className="w-full"
             >
               {t('switchNetwork')}
-            </Button>
+            </GradientButton>
           </>
         ) : (
           <>
@@ -104,7 +103,7 @@ export function WalletCard() {
             </p>
           </>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </GlassCard>
   );
 }
