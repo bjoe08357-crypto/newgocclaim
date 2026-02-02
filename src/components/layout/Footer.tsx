@@ -33,7 +33,7 @@ export function Footer({ variant = 'home' }: FooterProps) {
                   className="h-6 w-auto object-contain"
                 />
               </Link>
-              <span className="text-gray-500 text-sm">© 2025 GOC</span>
+              <span className="text-gray-500 text-sm">© 2026 GOC</span>
             </div>
             <div className="flex space-x-6 text-sm text-gray-400 items-center">
               <Link href="/" className="hover:text-white transition-colors">{t('home')}</Link>
@@ -102,7 +102,7 @@ export function Footer({ variant = 'home' }: FooterProps) {
           style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}
         >
           <div className="text-sm text-gray-500">
-            © 2025 GOC. All rights reserved.
+            © 2026 GOC. All rights reserved.
           </div>
           <div className="flex space-x-6">
             {/* Social icons could go here */}
