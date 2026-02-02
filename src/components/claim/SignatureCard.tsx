@@ -51,16 +51,19 @@ export function SignatureCard() {
     <Card key={`${lastUpdated}-${forceUpdate}`} className={!canSign ? 'opacity-60' : ''}>
       <CardHeader>
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 rounded-full flex items-center justify-center bg-goc-primary text-white font-bold text-sm">
+          <div 
+            className="w-8 h-8 rounded-full flex items-center justify-center text-black font-bold text-sm"
+            style={{ background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)' }}
+          >
             3
           </div>
-          <h2 className="text-lg font-semibold text-goc-ink">
+          <h2 className="text-lg font-semibold text-white">
             {t('title')}
           </h2>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <p className="text-sm text-goc-muted">
+        <p className="text-sm text-gray-300">
           {t('description')}
         </p>
 
@@ -80,7 +83,7 @@ export function SignatureCard() {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-goc-ink">
+                <p className="text-sm font-medium text-white">
                   {t('messageSigned')}
                 </p>
                 <Pill variant="success" className="mt-1">
@@ -89,7 +92,7 @@ export function SignatureCard() {
               </div>
             </div>
             
-            <p className="text-sm text-goc-muted">
+            <p className="text-sm text-gray-300">
               Your wallet ownership has been confirmed. You can now proceed to claim your tokens.
             </p>
           </div>
@@ -104,7 +107,7 @@ export function SignatureCard() {
           </Button>
         )}
 
-        <p className="text-xs text-goc-muted text-center">
+        <p className="text-xs text-gray-400 text-center">
           This signature doesn&apos;t cost any gas and proves wallet ownership.
         </p>
       </CardContent>

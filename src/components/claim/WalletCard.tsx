@@ -28,10 +28,13 @@ export function WalletCard() {
     <Card>
       <CardHeader>
         <div className="flex items-center space-x-3">
-          <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-goc-primary border border-blue-100">
-            Optional
-          </span>
-          <h2 className="text-lg font-semibold text-goc-ink">
+          <div 
+            className="w-8 h-8 rounded-full flex items-center justify-center text-black font-bold text-sm"
+            style={{ background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)' }}
+          >
+            1
+          </div>
+          <h2 className="text-lg font-semibold text-white">
             {t('title')}
           </h2>
         </div>
@@ -39,7 +42,7 @@ export function WalletCard() {
       <CardContent className="space-y-4">
         {!isConnected ? (
           <>
-            <p className="text-sm text-goc-muted">
+            <p className="text-sm text-gray-300">
               {t('description')}
             </p>
             <Button
@@ -54,7 +57,7 @@ export function WalletCard() {
           <>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-goc-ink">
+                <p className="text-sm font-medium text-white">
                   {formatAddress(address!)}
                 </p>
                 <Pill variant="warning" className="mt-1">
@@ -69,7 +72,7 @@ export function WalletCard() {
                 {t('disconnect')}
               </Button>
             </div>
-            <p className="text-sm text-goc-muted">
+            <p className="text-sm text-gray-300">
               Please switch to Ethereum Mainnet to continue.
             </p>
             <Button
@@ -84,7 +87,7 @@ export function WalletCard() {
           <>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-goc-ink">
+                <p className="text-sm font-medium text-white">
                   {formatAddress(address!)}
                 </p>
                 <Pill variant="success" className="mt-1">
@@ -99,7 +102,7 @@ export function WalletCard() {
                 {t('disconnect')}
               </Button>
             </div>
-            <p className="text-sm text-goc-muted">
+            <p className="text-sm text-gray-300">
               Wallet connected successfully. You can now proceed to verify your email.
             </p>
           </>

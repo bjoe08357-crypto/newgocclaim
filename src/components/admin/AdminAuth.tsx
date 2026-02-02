@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Alert } from '@/components/ui/Alert';
 
-
 interface AdminAuthProps {
   children: React.ReactNode;
 }
@@ -66,27 +65,39 @@ export function AdminAuth({ children }: AdminAuthProps) {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-goc-surface-alt">
+      <div 
+        className="min-h-screen flex items-center justify-center"
+        style={{ 
+          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(250, 204, 21, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(234, 179, 8, 0.1) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)'
+        }}
+      >
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <img 
                 src="/goc-logo.svg" 
                 alt="GOC Logo" 
-                className="h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain drop-shadow-lg"
               />
             </div>
-            <h1 className="text-2xl font-bold mb-2 text-goc-ink">
+            <h1 
+              className="text-2xl font-bold mb-2 bg-clip-text text-transparent"
+              style={{
+                background: 'linear-gradient(135deg, #facc15 0%, #fde047 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
               Admin Login
             </h1>
-            <p className="text-goc-muted">
+            <p className="text-gray-300">
               Enter your credentials to access the admin dashboard
             </p>
           </div>
 
           <Card>
             <CardHeader>
-              <h2 className="text-lg font-semibold text-goc-ink text-center">
+              <h2 className="text-lg font-semibold text-white text-center">
                 Authentication Required
               </h2>
             </CardHeader>
@@ -141,7 +152,7 @@ export function AdminAuth({ children }: AdminAuthProps) {
           onClick={handleLogout}
           variant="outline"
           size="sm"
-          className="bg-white border-goc-border hover:border-goc-primary/40"
+          className="bg-gray-800/80 backdrop-blur-sm border-gray-600 hover:border-yellow-400/50"
         >
           Logout
         </Button>

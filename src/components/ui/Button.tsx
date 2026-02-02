@@ -17,13 +17,13 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-goc-primary/30 focus:ring-offset-white disabled:opacity-50 disabled:pointer-events-none';
+  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
   
   const variantClasses = {
-    primary: 'bg-goc-primary hover:bg-blue-700 text-white shadow-goc font-semibold',
-    secondary: 'bg-goc-secondary/10 text-goc-ink border border-goc-secondary/30 hover:bg-goc-secondary/15 hover:border-goc-secondary/50',
-    outline: 'border border-goc-border text-goc-ink hover:border-goc-primary/40 hover:text-goc-primary',
-    ghost: 'text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt',
+    primary: 'bg-goc-button-primary hover:bg-goc-button-hover text-goc-black hover:shadow-goc-glow focus:ring-goc-gold-400 font-bold border border-goc-gold-500/20 transform hover:scale-105',
+    secondary: 'bg-goc-dark-800/60 backdrop-blur-sm border border-goc-gold-500/30 hover:border-goc-gold-400/60 text-goc-text-primary hover:text-goc-gold-400 focus:ring-goc-gold-400 font-semibold',
+    outline: 'border-2 border-goc-gold-500/50 bg-transparent text-goc-gold-400 hover:bg-goc-gold-500 hover:text-goc-black focus:ring-goc-gold-400 font-semibold transform hover:scale-105',
+    ghost: 'text-goc-text-secondary hover:bg-goc-dark-800/40 hover:text-goc-gold-400 focus:ring-goc-gold-400 font-medium',
   };
 
   const sizeClasses = {

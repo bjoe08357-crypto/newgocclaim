@@ -5,6 +5,7 @@ import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import { useClaim } from '@/hooks/useClaim';
 import { useWallet } from '@/hooks/useWallet';
 import { useTranslations } from 'next-intl';
+import { TOKEN_SYMBOL } from '@/config/token';
 
 export function ProgressIndicator() {
   const t = useTranslations('claim.steps');
@@ -44,10 +45,10 @@ export function ProgressIndicator() {
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-goc-ink">Progress</h3>
+          <h3 className="text-lg font-semibold text-white">Progress</h3>
           <button
             onClick={reset}
-            className="text-xs text-goc-muted hover:text-goc-ink transition-colors"
+            className="text-xs text-gray-400 hover:text-white transition-colors"
           >
             Reset
           </button>
@@ -62,19 +63,19 @@ export function ProgressIndicator() {
                   step.completed 
                     ? 'bg-green-500 text-white' 
                     : currentStep === step.id
-                    ? 'bg-goc-primary text-white'
-                    : 'bg-goc-border text-goc-muted'
+                    ? 'bg-yellow-400 text-black'
+                    : 'bg-gray-600 text-gray-400'
                 }`}
               >
                 {step.completed ? '✓' : step.id}
               </div>
               <div className="flex-1">
                 <p className={`text-sm font-medium ${
-                  step.completed ? 'text-green-700' : 'text-goc-ink'
+                  step.completed ? 'text-green-400' : 'text-gray-300'
                 }`}>
                   {step.name}
                 </p>
-                <p className="text-xs text-goc-muted">
+                <p className="text-xs text-gray-400">
                   {step.description}
                 </p>
               </div>
@@ -83,10 +84,10 @@ export function ProgressIndicator() {
         </div>
         
         {allocation && (
-          <div className="mt-4 pt-4 border-t border-goc-border">
-            <p className="text-xs text-goc-muted">Allocation:</p>
-            <p className="text-sm font-medium text-goc-ink">
-              {allocation.amount} {allocation.symbol}
+          <div className="mt-4 pt-4 border-t border-gray-700">
+            <p className="text-xs text-gray-400">Allocation:</p>
+            <p className="text-sm font-medium text-white">
+              {allocation.amount} {allocation.symbol ?? TOKEN_SYMBOL}
             </p>
           </div>
         )}

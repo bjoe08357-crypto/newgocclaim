@@ -46,8 +46,6 @@ export function EmailVerifyCard() {
     }
   }, [savedEmail, isEmailVerified, step]);
 
-  // Debug logging removed
-
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -85,10 +83,13 @@ export function EmailVerifyCard() {
       <Card>
         <CardHeader>
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-goc-primary text-white font-bold text-sm">
+            <div 
+              className="w-8 h-8 rounded-full flex items-center justify-center text-black font-bold text-sm"
+              style={{ background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)' }}
+            >
               2
             </div>
-            <h2 className="text-lg font-semibold text-goc-ink">
+            <h2 className="text-lg font-semibold text-white">
               {t('title')}
             </h2>
           </div>
@@ -96,7 +97,7 @@ export function EmailVerifyCard() {
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-goc-ink">
+              <p className="text-sm font-medium text-white">
                 {email}
               </p>
               <Pill variant="success" className="mt-1">
@@ -106,12 +107,18 @@ export function EmailVerifyCard() {
           </div>
           
           {allocation && (
-            <div className="border rounded-lg p-4 bg-green-50 border-green-200">
-              <p className="text-sm font-medium text-green-700">
+            <div 
+              className="border rounded-lg p-4"
+              style={{
+                backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                borderColor: 'rgba(34, 197, 94, 0.3)'
+              }}
+            >
+              <p className="text-sm font-medium text-green-400">
                 Allocated: {allocation.amount} {allocation.symbol}
               </p>
               {allocation.claimed && (
-                <p className="text-xs text-green-600 mt-1">
+                <p className="text-xs text-green-300 mt-1">
                   This allocation has already been claimed.
                 </p>
               )}
@@ -132,10 +139,13 @@ export function EmailVerifyCard() {
     <Card>
       <CardHeader>
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 rounded-full flex items-center justify-center bg-goc-primary text-white font-bold text-sm">
+          <div 
+            className="w-8 h-8 rounded-full flex items-center justify-center text-black font-bold text-sm"
+            style={{ background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)' }}
+          >
             2
           </div>
-          <h2 className="text-lg font-semibold text-goc-ink">
+          <h2 className="text-lg font-semibold text-white">
             {t('title')}
           </h2>
         </div>
@@ -143,7 +153,7 @@ export function EmailVerifyCard() {
       <CardContent className="space-y-4">
         {step === 'email' ? (
           <>
-            <p className="text-sm text-goc-muted">
+            <p className="text-sm text-gray-300">
               {t('description')}
             </p>
             
@@ -178,8 +188,8 @@ export function EmailVerifyCard() {
           </>
         ) : (
           <>
-            <p className="text-sm text-goc-muted">
-              {t('codeSent')} <strong className="text-goc-ink">{email}</strong>. 
+            <p className="text-sm text-gray-300">
+              {t('codeSent')} <strong className="text-white">{email}</strong>. 
               {t('enterCode')}
             </p>
             
@@ -221,7 +231,7 @@ export function EmailVerifyCard() {
               </div>
             </form>
 
-            <p className="text-xs text-goc-muted text-center">
+            <p className="text-xs text-gray-400 text-center">
               If an allocation exists for this address, we&apos;ve sent a code. 
               Didn&apos;t receive it? Check your spam folder.
             </p>

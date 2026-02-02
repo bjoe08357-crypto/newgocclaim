@@ -16,7 +16,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-goc-ink mb-2"
+            className="block text-sm font-medium text-white mb-2"
           >
             {label}
           </label>
@@ -25,17 +25,21 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           id={inputId}
           ref={ref}
           className={cn(
-            'block w-full rounded-xl px-4 py-3 text-goc-ink placeholder-goc-muted border border-goc-border bg-white shadow-goc-sm focus:ring-2 focus:ring-goc-primary/30 focus:border-goc-primary/40 transition-all duration-200',
-            error && 'border-red-300 focus:ring-red-200',
+            'block w-full rounded-xl px-4 py-3 text-white placeholder-gray-400 shadow-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300 border-0',
+            error && 'focus:ring-red-400',
             className
           )}
+          style={{
+            backgroundColor: 'rgba(64, 64, 64, 0.3)',
+            backdropFilter: 'blur(10px)'
+          }}
           {...props}
         />
         {error && (
-          <p className="text-sm text-red-600 mt-1">{error}</p>
+          <p className="text-sm text-red-400 mt-1">{error}</p>
         )}
         {helperText && !error && (
-          <p className="text-sm text-goc-muted mt-1">{helperText}</p>
+          <p className="text-sm text-gray-400 mt-1">{helperText}</p>
         )}
       </div>
     );

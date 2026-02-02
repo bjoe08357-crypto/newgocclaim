@@ -12,11 +12,19 @@ export function Pill({ variant = 'neutral', size = 'sm', children, className }: 
   const baseClasses = 'inline-flex items-center font-medium rounded-full';
   
   const variantClasses = {
-    success: 'text-green-700 border border-green-200 bg-green-50',
-    info: 'text-blue-700 border border-blue-200 bg-blue-50',
-    warning: 'text-amber-700 border border-amber-200 bg-amber-50',
-    error: 'text-red-700 border border-red-200 bg-red-50',
-    neutral: 'text-goc-muted border border-goc-border bg-goc-surface-alt',
+    success: 'text-black',
+    info: 'text-blue-300',
+    warning: 'text-yellow-300',
+    error: 'text-red-400',
+    neutral: 'text-gray-300',
+  };
+
+  const variantStyles = {
+    success: { background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)' },
+    info: { backgroundColor: 'rgba(59, 130, 246, 0.2)', border: '1px solid rgba(59, 130, 246, 0.3)' },
+    warning: { backgroundColor: 'rgba(245, 158, 11, 0.2)', border: '1px solid rgba(245, 158, 11, 0.3)' },
+    error: { backgroundColor: 'rgba(239, 68, 68, 0.2)', border: '1px solid rgba(239, 68, 68, 0.3)' },
+    neutral: { backgroundColor: 'rgba(107, 114, 128, 0.2)', border: '1px solid rgba(107, 114, 128, 0.3)' },
   };
 
   const sizeClasses = {
@@ -32,6 +40,7 @@ export function Pill({ variant = 'neutral', size = 'sm', children, className }: 
         sizeClasses[size],
         className
       )}
+      style={variantStyles[variant]}
     >
       {children}
     </span>

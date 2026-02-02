@@ -74,27 +74,27 @@ charlie@example.com,750.25`;
   return (
     <Card>
       <CardHeader>
-        <h2 className="text-lg font-semibold text-goc-ink">
+        <h2 className="text-lg font-semibold text-white">
           {t('title')}
         </h2>
-        <p className="text-sm text-goc-muted">
+        <p className="text-sm text-gray-400">
           {t('description')}
         </p>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <label htmlFor="csv-data" className="block text-sm font-medium text-goc-ink mb-2">
+          <label htmlFor="csv-data" className="block text-sm font-medium text-gray-300 mb-2">
             CSV Data
           </label>
           <textarea
             id="csv-data"
             rows={8}
-            className="block w-full rounded-md bg-white border border-goc-border text-goc-ink placeholder-goc-muted focus:border-goc-primary/40 focus:ring-goc-primary/30 sm:text-sm font-mono"
+            className="block w-full rounded-md bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-yellow-400 focus:ring-yellow-400 sm:text-sm font-mono"
             placeholder={exampleCsv}
             value={csvData}
             onChange={(e) => setCsvData(e.target.value)}
           />
-          <p className="text-xs text-goc-muted mt-1">
+          <p className="text-xs text-gray-400 mt-1">
             Format: email,amount (one per line, with or without header)
           </p>
         </div>
@@ -140,7 +140,7 @@ charlie@example.com,750.25`;
           </Button>
         </div>
 
-        <div className="text-xs text-goc-muted space-y-1">
+        <div className="text-xs text-gray-400 space-y-1">
           <p>• Existing unclaimed allocations will be updated</p>
           <p>• Already claimed allocations will be skipped</p>
           <p>• Duplicate emails in CSV will use the last occurrence</p>

@@ -8,25 +8,111 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'goc-primary': '#2563eb',
-        'goc-secondary': '#14b8a6',
-        'goc-ink': '#0f172a',
-        'goc-muted': '#64748b',
-        'goc-border': '#e2e8f0',
-        'goc-surface': '#ffffff',
-        'goc-surface-alt': '#f8fafc',
-        'goc-success': '#16a34a',
-        'goc-warning': '#f59e0b',
-        'goc-danger': '#ef4444',
-        'primary': '#2563eb',
-        'secondary': '#14b8a6',
-        'background': '#f8fafc',
-        'foreground': '#0f172a',
+        // GOC dark palette
+        'goc-black': '#000000',
+        'goc-dark': {
+          950: '#030303',
+          900: '#0a0a0a',
+          800: '#121212',
+          700: '#1a1a1a',
+          600: '#242424',
+          500: '#2d2d2d',
+          400: '#404040',
+          300: '#525252',
+          200: '#737373',
+          100: '#a3a3a3',
+        },
+        
+        // Metallic accent system
+        'goc-gold': {
+          900: '#92400e',
+          800: '#a16207',
+          700: '#b45309',
+          600: '#ca8a04',
+          500: '#eab308',
+          400: '#facc15',
+          300: '#fde047',
+          200: '#fef08a',
+          100: '#fefce8',
+        },
+        
+        // Accent colors
+        'goc-accent': {
+          primary: '#fbbf24',
+          secondary: '#f59e0b',
+          tertiary: '#d97706',
+        },
+        
+        // Text colors
+        'goc-text': {
+          primary: '#ffffff',
+          secondary: '#e5e5e5',
+          muted: '#a3a3a3',
+          subtle: '#737373',
+        },
+        
+        // Base tokens
+        'primary': '#D4AF37',
+        'secondary': '#2a2a2a',
+        'background': '#0a0a0a',
+        'foreground': '#ffffff',
+        
+        // Button variants with metallic accent
+        'indigo': {
+          50: '#F4D03F',
+          100: '#F4D03F',
+          200: '#F4D03F',
+          300: '#D4AF37',
+          400: '#D4AF37',
+          500: '#D4AF37',
+          600: '#B7950B',
+          700: '#B7950B',
+          800: '#85754E',
+          900: '#85754E',
+        },
+        
+        // Status colors
+        'green': {
+          50: '#10B981',
+          100: '#10B981',
+          200: '#10B981',
+          300: '#10B981',
+          400: '#10B981',
+          500: '#10B981',
+          600: '#10B981',
+          700: '#10B981',
+          800: '#10B981',
+          900: '#10B981',
+        },
+        
+        'gray': {
+          50: '#f8f9fa',
+          100: '#9ca3af',
+          200: '#6b7280',
+          300: '#4a4a4a',
+          400: '#3a3a3a',
+          500: '#2a2a2a',
+          600: '#1a1a1a',
+          700: '#111111',
+          800: '#0a0a0a',
+          900: '#000000',
+        }
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'goc-hero': 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 80% 120%, rgba(20, 184, 166, 0.12) 0%, transparent 55%)',
+        
+        'goc-gold-primary': 'linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%)',
+        'goc-gold-secondary': 'linear-gradient(45deg, #fbbf24 0%, #f59e0b 100%)',
+        'goc-gold-subtle': 'linear-gradient(180deg, #fde047 0%, #facc15 100%)',
+        
+        'goc-dark-primary': 'linear-gradient(135deg, #000000 0%, #121212 50%, #1a1a1a 100%)',
+        'goc-dark-secondary': 'linear-gradient(45deg, #030303 0%, #0a0a0a 100%)',
+        
+        'goc-hero': 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(250, 204, 21, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(234, 179, 8, 0.1) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)',
+        
+        'goc-button-primary': 'linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%)',
+        'goc-button-hover': 'linear-gradient(135deg, #fde047 0%, #facc15 50%, #eab308 100%)',
       },
       fontFamily: {
         'sans': ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
@@ -48,9 +134,12 @@ module.exports = {
         '9xl': ['8rem', { lineHeight: '1.1' }],
       },
       boxShadow: {
-        'goc-sm': '0 1px 2px rgba(15, 23, 42, 0.06)',
-        'goc': '0 8px 20px rgba(15, 23, 42, 0.08)',
-        'goc-lg': '0 24px 48px rgba(15, 23, 42, 0.12)',
+        'goc-sm': '0 2px 4px 0 rgba(250, 204, 21, 0.1)',
+        'goc': '0 4px 14px 0 rgba(250, 204, 21, 0.2)',
+        'goc-lg': '0 10px 25px 0 rgba(250, 204, 21, 0.3)',
+        'goc-xl': '0 25px 50px -12px rgba(250, 204, 21, 0.4)',
+        'goc-glow': '0 0 30px 0 rgba(250, 204, 21, 0.5)',
+        'goc-glow-lg': '0 0 60px 0 rgba(250, 204, 21, 0.6)',
       }
     },
   },

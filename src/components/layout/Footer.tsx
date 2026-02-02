@@ -14,7 +14,13 @@ export function Footer({ variant = 'home' }: FooterProps) {
   
   if (variant === 'minimal') {
     return (
-      <footer className="py-8 border-t border-goc-border bg-white relative z-10">
+      <footer 
+        className="py-8 border-t relative z-10"
+        style={{
+          backgroundColor: '#0a0a0a',
+          borderColor: 'rgba(255, 255, 255, 0.05)'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
@@ -27,13 +33,16 @@ export function Footer({ variant = 'home' }: FooterProps) {
                   className="h-6 w-auto object-contain"
                 />
               </Link>
-              <span className="text-goc-muted text-sm">© 2025 GOC</span>
+              <span className="text-gray-500 text-sm">© 2025 GOC</span>
             </div>
-            <div className="flex space-x-6 text-sm text-goc-muted">
-              <Link href="/" className="hover:text-goc-ink transition-colors">{t('home')}</Link>
-              <a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-goc-ink transition-colors">
+            <div className="flex space-x-6 text-sm text-gray-400 items-center">
+              <Link href="/" className="hover:text-white transition-colors">{t('home')}</Link>
+              <a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 Etherscan
               </a>
+              <Link href="/admin" className="hover:text-yellow-400 transition-colors">
+                Admin Login
+              </Link>
             </div>
           </div>
         </div>
@@ -42,7 +51,13 @@ export function Footer({ variant = 'home' }: FooterProps) {
   }
 
   return (
-    <footer className="py-16 border-t border-goc-border bg-white relative z-10">
+    <footer 
+      className="py-16 border-t relative z-10"
+      style={{
+        backgroundColor: '#0a0a0a',
+        borderColor: 'rgba(255, 255, 255, 0.05)'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
@@ -55,34 +70,38 @@ export function Footer({ variant = 'home' }: FooterProps) {
                 className="h-8 w-auto object-contain"
               />
             </Link>
-            <p className="text-goc-muted text-sm leading-relaxed max-w-sm">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               The secure, gas-free way to claim your GOC tokens. Built on Ethereum for maximum security and transparency.
             </p>
           </div>
           
           <div>
-            <h4 className="text-goc-ink font-semibold mb-4">Platform</h4>
-            <ul className="space-y-3 text-sm text-goc-muted">
-              <li><Link href="/claim" className="hover:text-goc-primary transition-colors">Claim Tokens</Link></li>
+            <h4 className="text-white font-semibold mb-4">Platform</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li><Link href="/claim" className="hover:text-yellow-400 transition-colors">Claim Tokens</Link></li>
               {/* @ts-expect-error - Hash links are valid but types are strict */}
-              <li><Link href="/#how-it-works" className="hover:text-goc-primary transition-colors">How it Works</Link></li>
+              <li><Link href="/#how-it-works" className="hover:text-yellow-400 transition-colors">How it Works</Link></li>
               {/* @ts-expect-error - Hash links are valid but types are strict */}
-              <li><Link href="/#faq" className="hover:text-goc-primary transition-colors">FAQ</Link></li>
+              <li><Link href="/#faq" className="hover:text-yellow-400 transition-colors">FAQ</Link></li>
+              <li><Link href="/admin" className="hover:text-yellow-400 transition-colors">Admin Login</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-goc-ink font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3 text-sm text-goc-muted">
-              <li><a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-goc-primary transition-colors">Etherscan</a></li>
-              <li><a href="#" className="hover:text-goc-primary transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-goc-primary transition-colors">Privacy Policy</a></li>
+            <h4 className="text-white font-semibold mb-4">Resources</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li><a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">Etherscan</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-goc-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-goc-muted">
+        <div 
+          className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}
+        >
+          <div className="text-sm text-gray-500">
             © 2025 GOC. All rights reserved.
           </div>
           <div className="flex space-x-6">

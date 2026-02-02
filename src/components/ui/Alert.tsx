@@ -10,32 +10,32 @@ interface AlertProps {
 export function Alert({ variant = 'info', children, className }: AlertProps) {
   const variantStyles = {
     success: {
-      backgroundColor: '#f0fdf4',
-      borderColor: '#bbf7d0',
-      color: '#15803d'
+      backgroundColor: 'rgba(34, 197, 94, 0.1)',
+      borderColor: 'rgba(34, 197, 94, 0.3)',
+      color: '#10b981'
     },
     info: {
-      backgroundColor: '#eff6ff',
-      borderColor: '#bfdbfe',
-      color: '#1d4ed8'
+      backgroundColor: 'rgba(59, 130, 246, 0.1)',
+      borderColor: 'rgba(59, 130, 246, 0.3)',
+      color: '#3b82f6'
     },
     warning: {
-      backgroundColor: '#fffbeb',
-      borderColor: '#fde68a',
-      color: '#b45309'
+      backgroundColor: 'rgba(245, 158, 11, 0.1)',
+      borderColor: 'rgba(245, 158, 11, 0.3)',
+      color: '#f59e0b'
     },
     error: {
-      backgroundColor: '#fef2f2',
-      borderColor: '#fecaca',
-      color: '#b91c1c'
+      backgroundColor: 'rgba(239, 68, 68, 0.1)',
+      borderColor: 'rgba(239, 68, 68, 0.3)',
+      color: '#ef4444'
     },
   };
 
   const iconClasses = {
-    success: 'text-green-600',
-    info: 'text-blue-600',
-    warning: 'text-amber-600',
-    error: 'text-red-600',
+    success: 'text-green-400',
+    info: 'text-blue-400',
+    warning: 'text-yellow-400',
+    error: 'text-red-400',
   };
 
   const icons = {
