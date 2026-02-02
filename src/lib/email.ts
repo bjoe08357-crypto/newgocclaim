@@ -1,26 +1,29 @@
 import nodemailer from 'nodemailer';
 import { generateSecureCode } from './crypto';
 
-const SMTP_HOST = process.env.SMTP_HOST;
-const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
-const SMTP_USER = process.env.SMTP_USER;
-const SMTP_PASS = process.env.SMTP_PASS;
-const EMAIL_FROM = process.env.EMAIL_FROM || 'claims@goc.example';
+const SMTP_HOST = process.env.SMTP_HOST?.trim();
+const SMTP_PORT = parseInt((process.env.SMTP_PORT || '587').trim(), 10);
+const SMTP_USER = process.env.SMTP_USER?.trim();
+const SMTP_PASS = process.env.SMTP_PASS?.trim();
+const EMAIL_FROM = process.env.EMAIL_FROM?.trim() || 'claims@goc.example';
+const EMAIL_ENABLED = Boolean(SMTP_HOST && SMTP_USER && SMTP_PASS);
 
-if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
+if (!EMAIL_ENABLED) {
   console.warn('Email configuration missing. Email sending will be disabled.');
 }
 
 // Create transporter
-const transporter = nodemailer.createTransport({
-  host: SMTP_HOST,
-  port: SMTP_PORT,
-  secure: SMTP_PORT === 465,
-  auth: {
-    user: SMTP_USER,
-    pass: SMTP_PASS,
-  },
-});
+const transporter = EMAIL_ENABLED
+  ? nodemailer.createTransport({
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      secure: SMTP_PORT === 465,
+      auth: {
+        user: SMTP_USER,
+        pass: SMTP_PASS,
+      },
+    })
+  : null;
 
 /**
  * Generate a 6-digit verification code
@@ -36,7 +39,7 @@ export async function sendVerificationEmail(
   email: string,
   code: string
 ): Promise<void> {
-  if (!SMTP_HOST) {
+  if (!EMAIL_ENABLED || !transporter) {
     console.warn(`[DEV] Email code for ${email}: ${code}`);
     return;
   }
@@ -125,7 +128,7 @@ export async function sendClaimReceiptEmail(
   txHash: string,
   walletAddress: string
 ): Promise<void> {
-  if (!SMTP_HOST) {
+  if (!EMAIL_ENABLED || !transporter) {
     console.warn(`[DEV] Claim receipt for ${email}: ${amount} GOC, TX: ${txHash}`);
     return;
   }

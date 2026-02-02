@@ -170,6 +170,7 @@
       },
       "connectWallet": {
         "title": "Connect Wallet",
+        "optionalLabel": "Optional",
         "description": "Optional: connect your wallet for status visibility and signature prompts if required.",
         "connectButton": "Connect Wallet",
         "wrongNetwork": "Wrong Network",

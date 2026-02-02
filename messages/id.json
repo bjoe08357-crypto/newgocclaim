@@ -170,6 +170,7 @@
       },
       "connectWallet": {
         "title": "Hubungkan Dompet",
+        "optionalLabel": "Opsional",
         "description": "Opsional: hubungkan dompet untuk melihat status dan tanda tangan jika diperlukan.",
         "connectButton": "Hubungkan Dompet",
         "wrongNetwork": "Jaringan Salah",

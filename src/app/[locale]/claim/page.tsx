@@ -75,8 +75,8 @@ export default function ClaimPage() {
 
         <div className="max-w-3xl mx-auto space-y-6">
           <AddressInputCard />
-          <WalletCard />
           <ClaimCard />
+          <WalletCard />
           <TokenInfoCard />
         </div>
 

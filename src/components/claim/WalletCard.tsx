@@ -32,11 +32,14 @@ export function WalletCard() {
             className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
             style={{ background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)' }}
           >
-            1
+            3
           </div>
-          <h2 className="text-lg font-semibold text-white">
-            {t('title')}
-          </h2>
+          <div className="flex items-center gap-2">
+            <h2 className="text-lg font-semibold text-white">
+              {t('title')}
+            </h2>
+            <Pill variant="info">{t('optionalLabel')}</Pill>
+          </div>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">

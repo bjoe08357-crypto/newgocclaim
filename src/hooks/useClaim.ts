@@ -26,38 +26,45 @@ interface ClaimState {
 }
 
 const STORAGE_KEY = 'goc-claim-state';
+const CLAIM_STATE_UPDATED_EVENT = 'claim-state-updated';
+
+const createInitialState = (): ClaimState => ({
+  sessionToken: null,
+  allocation: null,
+  history: [],
+  email: null,
+  isEmailVerified: false,
+  recipientAddress: null,
+  isSigned: false,
+  signedAddress: null,
+  isClaimed: false,
+  claimTxHash: null,
+  lastUpdated: Date.now(),
+});
+
+const readStoredState = (): ClaimState | null => {
+  if (typeof window === 'undefined') return null;
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return null;
+    const parsed = JSON.parse(saved);
+    return {
+      ...createInitialState(),
+      ...parsed,
+      lastUpdated: parsed?.lastUpdated ?? Date.now(),
+    };
+  } catch (error) {
+    console.warn('Failed to load saved claim state:', error);
+    return null;
+  }
+};
 
 export function useClaim() {
   const { address, isConnected } = useAccount();
   const { signMessageAsync } = useSignMessage();
 
   // Initialize state from localStorage if available
-  const [state, setState] = useState<ClaimState>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          const parsedState = JSON.parse(saved);
-          return parsedState;
-        }
-      } catch (error) {
-        console.warn('Failed to load saved claim state:', error);
-      }
-    }
-    return {
-      sessionToken: null,
-      allocation: null,
-      history: [],
-      email: null,
-      isEmailVerified: false,
-      recipientAddress: null,
-      isSigned: false,
-      signedAddress: null,
-      isClaimed: false,
-      claimTxHash: null,
-      lastUpdated: Date.now(),
-    };
-  });
+  const [state, setState] = useState<ClaimState>(() => readStoredState() ?? createInitialState());
 
   // Save state to localStorage - clean version without debug logs
   const saveStateToStorage = (newState: ClaimState) => {
@@ -67,8 +74,22 @@ export function useClaim() {
       } catch (error) {
         console.warn('Failed to save claim state:', error);
       }
+      window.dispatchEvent(new Event(CLAIM_STATE_UPDATED_EVENT));
     }
   };
+
+  // Keep multiple hook instances in sync
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleStateUpdate = () => {
+      const storedState = readStoredState();
+      setState(storedState ?? createInitialState());
+    };
+
+    window.addEventListener(CLAIM_STATE_UPDATED_EVENT, handleStateUpdate);
+    return () => window.removeEventListener(CLAIM_STATE_UPDATED_EVENT, handleStateUpdate);
+  }, []);
 
   // Handle wallet connection changes - DISABLED FOR DEBUGGING
   useEffect(() => {
@@ -364,19 +385,7 @@ export function useClaim() {
   };
 
   const reset = () => {
-    const initialState = {
-      sessionToken: null,
-      allocation: null,
-      history: [],
-      email: null,
-      isEmailVerified: false,
-      recipientAddress: null,
-      isSigned: false,
-      signedAddress: null,
-      isClaimed: false,
-      claimTxHash: null,
-      lastUpdated: Date.now(),
-    };
+    const initialState = createInitialState();
     setState(initialState);
     setErrors({
       email: '',
@@ -388,6 +397,7 @@ export function useClaim() {
     // Clear localStorage
     if (typeof window !== 'undefined') {
       localStorage.removeItem(STORAGE_KEY);
+      window.dispatchEvent(new Event(CLAIM_STATE_UPDATED_EVENT));
     }
   };
 
