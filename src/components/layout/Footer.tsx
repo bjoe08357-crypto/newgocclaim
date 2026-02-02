@@ -29,11 +29,17 @@ export function Footer({ variant = 'home' }: FooterProps) {
               </Link>
               <span className="text-goc-muted text-sm">© 2026 by GOC</span>
             </div>
-            <div className="flex space-x-6 text-sm text-goc-muted">
+            <div className="flex space-x-6 text-sm text-goc-muted items-center">
               <Link href="/" className="hover:text-goc-ink transition-colors">{t('home')}</Link>
               <a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-goc-ink transition-colors">
                 Etherscan
               </a>
+              <Link
+                href="/admin"
+                className="px-3 py-1 rounded-lg border border-goc-border bg-goc-surface hover:border-goc-primary/40 hover:text-goc-ink transition-colors text-xs font-semibold"
+              >
+                Admin
+              </Link>
             </div>
           </div>
         </div>
@@ -86,7 +92,12 @@ export function Footer({ variant = 'home' }: FooterProps) {
             © 2026 by GOC. All rights reserved.
           </div>
           <div className="flex space-x-6">
-            {/* Social icons could go here */}
+            <Link
+              href="/admin"
+              className="px-3 py-1 rounded-lg border border-goc-border bg-goc-surface hover:border-goc-primary/40 hover:text-goc-ink transition-colors text-xs font-semibold"
+            >
+              Admin
+            </Link>
           </div>
         </div>
       </div>

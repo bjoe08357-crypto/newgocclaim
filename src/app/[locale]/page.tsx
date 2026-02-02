@@ -35,6 +35,9 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Effects */}
         <div className="absolute inset-0 z-0 bg-goc-hero"></div>
+        <div className="absolute -top-40 -left-32 w-[520px] h-[520px] rounded-full bg-goc-primary/15 blur-[140px]"></div>
+        <div className="absolute -bottom-40 -right-24 w-[420px] h-[420px] rounded-full bg-goc-secondary/15 blur-[120px]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           {/* Badge */}
@@ -46,7 +49,9 @@ export default function HomePage() {
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 text-goc-ink animate-fade-in-up delay-100">
             Claim Your <br />
-            <span className="text-goc-primary inline-block transform hover:scale-105 transition-transform duration-300 cursor-default">GOC Tokens</span>
+            <span className="inline-block transform hover:scale-105 transition-transform duration-300 cursor-default bg-gradient-to-r from-goc-primary via-goc-secondary to-goc-primary bg-clip-text text-transparent">
+              GOC Tokens
+            </span>
           </h1>
 
           {/* Subtitle */}
@@ -59,7 +64,7 @@ export default function HomePage() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up delay-300">
             <Link href="/claim" className="group relative w-full sm:w-auto">
-              <div className="absolute -inset-1 bg-gradient-to-r from-goc-primary to-goc-secondary rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-goc-primary to-goc-secondary rounded-2xl blur opacity-40 group-hover:opacity-80 transition duration-1000 group-hover:duration-200"></div>
               <button className="relative w-full sm:w-auto px-8 py-4 bg-goc-primary hover:bg-indigo-500 text-white font-bold rounded-xl transition-all duration-200 transform group-hover:translate-y-[-2px] flex items-center justify-center gap-2 shadow-goc">
                 <span>{t('hero.claimNow')}</span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,14 +82,14 @@ export default function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-goc-border pt-12 animate-fade-in-up delay-500">
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-goc-border/70 pt-10 animate-fade-in-up delay-500">
             {[
               { label: 'Total Claims', value: '10K+' },
               { label: 'Success Rate', value: '100%' },
               { label: 'Gas Fees', value: '$0' },
               { label: 'Support', value: '24/7' },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center rounded-2xl border border-goc-border bg-goc-surface/60 backdrop-blur-sm py-5">
                 <div className="text-2xl md:text-3xl font-bold text-goc-ink mb-1">{stat.value}</div>
                 <div className="text-sm text-goc-muted uppercase tracking-wider">{stat.label}</div>
               </div>
@@ -102,19 +107,19 @@ export default function HomePage() {
                 icon: '🔒',
                 title: t('features.nonCustodial.title'),
                 desc: t('features.nonCustodial.description'),
-                gradient: 'from-blue-500/10 to-slate-50'
+                gradient: 'from-goc-primary/20 to-transparent'
               },
               {
                 icon: '⚡',
                 title: t('features.gasFree.title'),
                 desc: t('features.gasFree.description'),
-                gradient: 'from-teal-500/10 to-slate-50'
+                gradient: 'from-goc-secondary/20 to-transparent'
               },
               {
                 icon: '🛡️',
                 title: t('features.secure.title'),
                 desc: t('features.secure.description'),
-                gradient: 'from-emerald-500/10 to-slate-50'
+                gradient: 'from-indigo-500/20 to-transparent'
               }
             ].map((feature, index) => (
               <div key={index} className="group relative p-8 rounded-3xl border border-goc-border bg-goc-surface hover:bg-goc-surface-alt transition-all duration-300 overflow-hidden shadow-goc-sm">
@@ -131,7 +136,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-32 relative overflow-hidden bg-goc-surface">
+      <section id="how-it-works" className="py-32 relative overflow-hidden bg-[#0c1224]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -144,7 +149,7 @@ export default function HomePage() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-goc-primary/30 to-transparent -translate-y-1/2"></div>
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-goc-primary/40 to-transparent -translate-y-1/2"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
@@ -168,7 +173,7 @@ export default function HomePage() {
                 }
               ].map((item, index) => (
                 <div key={index} className="relative group">
-                  <div className="bg-goc-surface-alt border border-goc-border rounded-2xl p-8 relative z-10 hover:border-goc-primary/40 transition-colors duration-300 shadow-goc-sm">
+                  <div className="bg-goc-surface border border-goc-border rounded-2xl p-8 relative z-10 hover:border-goc-primary/40 transition-colors duration-300 shadow-goc-sm">
                     <div className="w-12 h-12 rounded-full bg-goc-primary/15 border border-goc-primary/30 flex items-center justify-center text-goc-primary font-bold mb-6 group-hover:scale-110 transition-transform duration-300">
                       {item.step}
                     </div>
