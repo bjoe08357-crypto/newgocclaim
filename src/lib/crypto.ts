@@ -1,6 +1,6 @@
 import { createHmac, randomBytes, createCipheriv, createDecipheriv, timingSafeEqual } from 'crypto';
 
-const PEPPER = process.env.PEPPER;
+const PEPPER = process.env.PEPPER?.trim();
 if (!PEPPER) {
   throw new Error('PEPPER environment variable is required');
 }
