@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { GlassCard } from '@/components/ui/GlassCard';
+import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { GradientButton } from '@/components/ui/GradientButton';
 import { Input } from '@/components/ui/Input';
 import { Pill } from '@/components/ui/Pill';
 import { Alert } from '@/components/ui/Alert';
@@ -116,8 +115,8 @@ export function AddressInputCard() {
   // If email is verified and we have an address, show completion state
   if (isEmailVerified && savedRecipientAddress && isValidAddress(savedRecipientAddress)) {
     return (
-      <GlassCard>
-        <div className="p-6 space-y-4">
+      <Card>
+        <CardHeader>
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 rounded-full flex items-center justify-center bg-goc-primary text-white font-bold text-sm">
               ✓
@@ -126,6 +125,8 @@ export function AddressInputCard() {
               {t('title')}
             </h2>
           </div>
+        </CardHeader>
+        <CardContent className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-goc-ink">
@@ -149,12 +150,12 @@ export function AddressInputCard() {
           </div>
 
           {allocation && (
-            <div className="border rounded-lg p-4 bg-emerald-500/10 border-emerald-500/30">
-              <p className="text-sm font-medium text-emerald-200">
+            <div className="border rounded-lg p-4 bg-green-50 border-green-200">
+              <p className="text-sm font-medium text-green-700">
                 Allocated: {allocation.amount} {allocation.symbol}
               </p>
               {allocation.claimed && (
-                <p className="text-xs text-emerald-200/70 mt-1">
+                <p className="text-xs text-green-600 mt-1">
                   This allocation has already been claimed.
                 </p>
               )}
@@ -166,22 +167,24 @@ export function AddressInputCard() {
               {t('noAllocation')}
             </Alert>
           )}
-        </div>
-      </GlassCard>
+        </CardContent>
+      </Card>
     );
   }
 
   return (
-    <GlassCard>
-      <div className="p-6 space-y-4">
-        <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 rounded-full flex items-center justify-center bg-goc-primary text-white font-bold text-sm">
+    <Card>
+      <CardHeader>
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-goc-primary text-white font-bold text-sm">
             1
           </div>
-          <h2 className="text-lg font-semibold text-goc-ink">
+            <h2 className="text-lg font-semibold text-goc-ink">
             {t('title')}
           </h2>
         </div>
+      </CardHeader>
+      <CardContent className="space-y-4">
         {step === 'email' && (
           <>
             <p className="text-sm text-goc-muted">
@@ -207,14 +210,14 @@ export function AddressInputCard() {
                 </Alert>
               )}
 
-              <GradientButton
+              <Button
                 type="submit"
                 loading={loading.requestingCode}
                 className="w-full"
                 disabled={!email}
               >
                 {t('sendCode')}
-              </GradientButton>
+              </Button>
             </form>
           </>
         )}
@@ -253,14 +256,14 @@ export function AddressInputCard() {
                 >
                   {t('resendCode')}
                 </Button>
-                <GradientButton
+                <Button
                   type="submit"
                   loading={loading.verifyingCode}
                   className="flex-1"
                   disabled={code.length !== 6}
                 >
                   {t('verifyCode')}
-                </GradientButton>
+                </Button>
               </div>
             </form>
 
@@ -303,13 +306,13 @@ export function AddressInputCard() {
                 >
                   {t('backToCode')}
                 </Button>
-                <GradientButton
+                <Button
                   type="submit"
                   className="flex-1"
                   disabled={!localRecipientAddress || !isValidAddress(localRecipientAddress)}
                 >
                   {t('setAddress')}
-                </GradientButton>
+                </Button>
               </div>
             </form>
 
@@ -319,7 +322,7 @@ export function AddressInputCard() {
             </p>
           </>
         )}
-      </div>
-    </GlassCard>
+      </CardContent>
+    </Card>
   );
 }

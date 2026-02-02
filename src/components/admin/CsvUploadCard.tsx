@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { GlassCard } from '@/components/ui/GlassCard';
+import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { GradientButton } from '@/components/ui/GradientButton';
 import { Alert } from '@/components/ui/Alert';
 import { useTranslations } from 'next-intl';
 
@@ -73,16 +72,16 @@ bob@example.com,2500
 charlie@example.com,750.25`;
 
   return (
-    <GlassCard>
-      <div className="p-6 space-y-4">
-        <div>
-          <h2 className="text-lg font-semibold text-goc-ink">
-            {t('title')}
-          </h2>
-          <p className="text-sm text-goc-muted">
-            {t('description')}
-          </p>
-        </div>
+    <Card>
+      <CardHeader>
+        <h2 className="text-lg font-semibold text-goc-ink">
+          {t('title')}
+        </h2>
+        <p className="text-sm text-goc-muted">
+          {t('description')}
+        </p>
+      </CardHeader>
+      <CardContent className="space-y-4">
         <div>
           <label htmlFor="csv-data" className="block text-sm font-medium text-goc-ink mb-2">
             CSV Data
@@ -90,7 +89,7 @@ charlie@example.com,750.25`;
           <textarea
             id="csv-data"
             rows={8}
-            className="block w-full rounded-md bg-goc-surface border border-goc-border text-goc-ink placeholder-goc-muted focus:border-goc-primary/40 focus:ring-goc-primary/30 sm:text-sm font-mono"
+            className="block w-full rounded-md bg-white border border-goc-border text-goc-ink placeholder-goc-muted focus:border-goc-primary/40 focus:ring-goc-primary/30 sm:text-sm font-mono"
             placeholder={exampleCsv}
             value={csvData}
             onChange={(e) => setCsvData(e.target.value)}
@@ -122,14 +121,14 @@ charlie@example.com,750.25`;
         )}
 
         <div className="flex space-x-3">
-          <GradientButton
+          <Button
             onClick={handleUpload}
             loading={uploading}
             disabled={!csvData.trim()}
             className="flex-1"
           >
             {uploading ? t('uploading') : t('upload')}
-          </GradientButton>
+          </Button>
           <Button
             variant="outline"
             onClick={() => {
@@ -141,21 +140,13 @@ charlie@example.com,750.25`;
           </Button>
         </div>
 
-        <div className="rounded-xl border border-goc-border bg-goc-surface/70 p-3 text-xs font-mono text-goc-ink">
-          email,amount
-          <br />
-          alice@example.com,1000.5
-          <br />
-          bob@example.com,2500
-        </div>
-
         <div className="text-xs text-goc-muted space-y-1">
           <p>• Existing unclaimed allocations will be updated</p>
           <p>• Already claimed allocations will be skipped</p>
           <p>• Duplicate emails in CSV will use the last occurrence</p>
           <p>• Invalid rows will be skipped and reported</p>
         </div>
-      </div>
-    </GlassCard>
+      </CardContent>
+    </Card>
   );
 }

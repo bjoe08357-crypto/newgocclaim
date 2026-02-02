@@ -14,7 +14,7 @@ export function Footer({ variant = 'home' }: FooterProps) {
   
   if (variant === 'minimal') {
     return (
-      <footer className="py-8 border-t border-goc-border bg-goc-surface-alt relative z-10">
+      <footer className="py-8 border-t border-goc-border bg-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
@@ -27,19 +27,13 @@ export function Footer({ variant = 'home' }: FooterProps) {
                   className="h-6 w-auto object-contain"
                 />
               </Link>
-              <span className="text-goc-muted text-sm">© 2026 by GOC</span>
+              <span className="text-goc-muted text-sm">© 2025 GOC</span>
             </div>
-            <div className="flex space-x-6 text-sm text-goc-muted items-center">
+            <div className="flex space-x-6 text-sm text-goc-muted">
               <Link href="/" className="hover:text-goc-ink transition-colors">{t('home')}</Link>
               <a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-goc-ink transition-colors">
                 Etherscan
               </a>
-              <Link
-                href="/admin"
-                className="px-3 py-1 rounded-lg border border-goc-border bg-goc-surface hover:border-goc-primary/40 hover:text-goc-ink transition-colors text-xs font-semibold"
-              >
-                Admin
-              </Link>
             </div>
           </div>
         </div>
@@ -48,7 +42,7 @@ export function Footer({ variant = 'home' }: FooterProps) {
   }
 
   return (
-    <footer className="py-16 border-t border-goc-border bg-goc-surface-alt relative z-10">
+    <footer className="py-16 border-t border-goc-border bg-white relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
@@ -89,15 +83,10 @@ export function Footer({ variant = 'home' }: FooterProps) {
         
         <div className="border-t border-goc-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-goc-muted">
-            © 2026 by GOC. All rights reserved.
+            © 2025 GOC. All rights reserved.
           </div>
           <div className="flex space-x-6">
-            <Link
-              href="/admin"
-              className="px-3 py-1 rounded-lg border border-goc-border bg-goc-surface hover:border-goc-primary/40 hover:text-goc-ink transition-colors text-xs font-semibold"
-            >
-              Admin
-            </Link>
+            {/* Social icons could go here */}
           </div>
         </div>
       </div>

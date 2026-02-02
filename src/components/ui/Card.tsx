@@ -11,7 +11,7 @@ export function Card({ children, className, style }: CardProps) {
   return (
     <div
       className={cn(
-        'rounded-2xl border border-goc-border bg-goc-surface/90 shadow-goc-sm transition-all duration-300 hover:shadow-goc backdrop-blur-xl',
+        'rounded-2xl border border-goc-border bg-goc-surface shadow-goc-sm transition-all duration-300 hover:shadow-goc',
         className
       )}
       style={style}
@@ -29,7 +29,7 @@ interface CardHeaderProps {
 export function CardHeader({ children, className }: CardHeaderProps) {
   return (
     <div 
-      className={cn('px-6 py-4 border-b border-goc-border/80 bg-goc-surface-alt/40', className)}
+      className={cn('px-6 py-4 border-b border-goc-border', className)}
     >
       {children}
     </div>
@@ -57,7 +57,7 @@ interface CardFooterProps {
 export function CardFooter({ children, className }: CardFooterProps) {
   return (
     <div 
-      className={cn('px-6 py-4 border-t border-goc-border/80 bg-goc-surface-alt/50', className)}
+      className={cn('px-6 py-4 border-t border-goc-border bg-goc-surface-alt', className)}
     >
       {children}
     </div>
