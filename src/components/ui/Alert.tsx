@@ -20,9 +20,9 @@ export function Alert({ variant = 'info', children, className }: AlertProps) {
       color: '#3b82f6'
     },
     warning: {
-      backgroundColor: 'rgba(245, 158, 11, 0.1)',
-      borderColor: 'rgba(245, 158, 11, 0.3)',
-      color: '#f59e0b'
+      backgroundColor: 'rgba(34, 211, 238, 0.12)',
+      borderColor: 'rgba(34, 211, 238, 0.35)',
+      color: '#22d3ee'
     },
     error: {
       backgroundColor: 'rgba(239, 68, 68, 0.1)',
@@ -34,7 +34,7 @@ export function Alert({ variant = 'info', children, className }: AlertProps) {
   const iconClasses = {
     success: 'text-green-400',
     info: 'text-blue-400',
-    warning: 'text-yellow-400',
+    warning: 'text-cyan-300',
     error: 'text-red-400',
   };
 

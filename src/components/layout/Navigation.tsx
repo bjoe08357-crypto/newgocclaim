@@ -47,10 +47,10 @@ export function Navigation({ showCTA = true }: NavigationProps) {
     return (
       <Link href="/claim">
         <button 
-          className="px-6 py-2.5 rounded-xl font-semibold text-black transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
+          className="px-6 py-2.5 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
           style={{
-            background: 'linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%)',
-            boxShadow: '0 10px 25px 0 rgba(250, 204, 21, 0.3)'
+            background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)',
+            boxShadow: '0 10px 25px 0 rgba(124, 92, 255, 0.35)'
           }}
         >
           Start Claiming
@@ -72,7 +72,7 @@ export function Navigation({ showCTA = true }: NavigationProps) {
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center group">
             <div className="flex-shrink-0 relative">
-              <div className="absolute -inset-2 bg-yellow-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -inset-2 bg-goc-primary/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <Image
                 src="/goc-logo.svg"
                 alt="GOC Logo"

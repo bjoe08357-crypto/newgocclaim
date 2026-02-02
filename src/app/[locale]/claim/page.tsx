@@ -19,7 +19,7 @@ export default function ClaimPage() {
     <div 
       className="min-h-screen"
       style={{ 
-        background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(250, 204, 21, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(234, 179, 8, 0.1) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)'
+        background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 92, 255, 0.18) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(34, 211, 238, 0.12) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)'
       }}
     >
       <Navigation variant="claim" />
@@ -31,7 +31,7 @@ export default function ClaimPage() {
             <div className="relative group">
               <div
                 className="absolute -inset-4 rounded-full opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500"
-                style={{ background: 'linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)' }}
               ></div>
               <Image
                 src="/goc-logo.svg"
@@ -46,7 +46,7 @@ export default function ClaimPage() {
           <h1 
             className="text-3xl font-bold mb-4 bg-clip-text text-transparent"
             style={{
-              background: 'linear-gradient(135deg, #facc15 0%, #fde047 100%)',
+              background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}
@@ -66,7 +66,7 @@ export default function ClaimPage() {
               }}
               variant="outline"
               size="sm"
-              className="text-gray-400 border-gray-600 hover:border-yellow-400/50 hover:text-yellow-400 transition-all duration-300"
+              className="text-gray-400 border-gray-600 hover:border-goc-primary/50 hover:text-goc-primary transition-all duration-300"
             >
               🔄 Start Over
             </Button>
@@ -107,17 +107,17 @@ export default function ClaimPage() {
               {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
               <a 
                 href="/#faq" 
-                className="inline-flex items-center px-4 py-2 border-2 rounded-xl text-sm font-medium text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-black transition-all duration-300"
-                style={{ borderColor: 'rgba(250, 204, 21, 0.5)' }}
+                className="inline-flex items-center px-4 py-2 border-2 rounded-xl text-sm font-medium text-goc-primary bg-transparent hover:bg-goc-primary hover:text-white transition-all duration-300"
+                style={{ borderColor: 'rgba(124, 92, 255, 0.5)' }}
               >
                 View FAQ
               </a>
               <a 
                 href="mailto:support@goc.example" 
-                className="inline-flex items-center px-4 py-2 border border-transparent rounded-xl text-sm font-medium text-black transition-all duration-300 shadow-2xl hover:scale-105"
+                className="inline-flex items-center px-4 py-2 border border-transparent rounded-xl text-sm font-medium text-white transition-all duration-300 shadow-2xl hover:scale-105"
                 style={{
-                  background: 'linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%)',
-                  boxShadow: '0 4px 14px 0 rgba(250, 204, 21, 0.2)'
+                  background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)',
+                  boxShadow: '0 4px 14px 0 rgba(124, 92, 255, 0.25)'
                 }}
               >
                 Contact Support

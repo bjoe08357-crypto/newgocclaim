@@ -89,7 +89,7 @@ charlie@example.com,750.25`;
           <textarea
             id="csv-data"
             rows={8}
-            className="block w-full rounded-md bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-yellow-400 focus:ring-yellow-400 sm:text-sm font-mono"
+            className="block w-full rounded-md bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-goc-primary focus:ring-goc-primary sm:text-sm font-mono"
             placeholder={exampleCsv}
             value={csvData}
             onChange={(e) => setCsvData(e.target.value)}

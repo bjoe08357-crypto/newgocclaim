@@ -22,27 +22,16 @@ module.exports = {
           200: '#737373',
           100: '#a3a3a3',
         },
-        
-        // Metallic accent system
-        'goc-gold': {
-          900: '#92400e',
-          800: '#a16207',
-          700: '#b45309',
-          600: '#ca8a04',
-          500: '#eab308',
-          400: '#facc15',
-          300: '#fde047',
-          200: '#fef08a',
-          100: '#fefce8',
-        },
-        
-        // Accent colors
+
+        // Logo gradient colors
+        'goc-primary': '#7C5CFF',
+        'goc-secondary': '#22D3EE',
         'goc-accent': {
-          primary: '#fbbf24',
-          secondary: '#f59e0b',
-          tertiary: '#d97706',
+          primary: '#7C5CFF',
+          secondary: '#22D3EE',
+          tertiary: '#5B8CFF',
         },
-        
+
         // Text colors
         'goc-text': {
           primary: '#ffffff',
@@ -50,25 +39,25 @@ module.exports = {
           muted: '#a3a3a3',
           subtle: '#737373',
         },
-        
+
         // Base tokens
-        'primary': '#D4AF37',
-        'secondary': '#2a2a2a',
+        'primary': '#7C5CFF',
+        'secondary': '#22D3EE',
         'background': '#0a0a0a',
         'foreground': '#ffffff',
         
         // Button variants with metallic accent
         'indigo': {
-          50: '#F4D03F',
-          100: '#F4D03F',
-          200: '#F4D03F',
-          300: '#D4AF37',
-          400: '#D4AF37',
-          500: '#D4AF37',
-          600: '#B7950B',
-          700: '#B7950B',
-          800: '#85754E',
-          900: '#85754E',
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#7c5cff',
+          600: '#6c4bff',
+          700: '#5b39ff',
+          800: '#4a2be5',
+          900: '#3b1bcb',
         },
         
         // Status colors
@@ -102,17 +91,13 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         
-        'goc-gold-primary': 'linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%)',
-        'goc-gold-secondary': 'linear-gradient(45deg, #fbbf24 0%, #f59e0b 100%)',
-        'goc-gold-subtle': 'linear-gradient(180deg, #fde047 0%, #facc15 100%)',
-        
         'goc-dark-primary': 'linear-gradient(135deg, #000000 0%, #121212 50%, #1a1a1a 100%)',
         'goc-dark-secondary': 'linear-gradient(45deg, #030303 0%, #0a0a0a 100%)',
-        
-        'goc-hero': 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(250, 204, 21, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(234, 179, 8, 0.1) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)',
-        
-        'goc-button-primary': 'linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%)',
-        'goc-button-hover': 'linear-gradient(135deg, #fde047 0%, #facc15 50%, #eab308 100%)',
+
+        'goc-hero': 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 92, 255, 0.2) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(34, 211, 238, 0.16) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)',
+
+        'goc-button-primary': 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)',
+        'goc-button-hover': 'linear-gradient(135deg, #8B7CFF 0%, #38E3F0 100%)',
       },
       fontFamily: {
         'sans': ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
@@ -134,12 +119,12 @@ module.exports = {
         '9xl': ['8rem', { lineHeight: '1.1' }],
       },
       boxShadow: {
-        'goc-sm': '0 2px 4px 0 rgba(250, 204, 21, 0.1)',
-        'goc': '0 4px 14px 0 rgba(250, 204, 21, 0.2)',
-        'goc-lg': '0 10px 25px 0 rgba(250, 204, 21, 0.3)',
-        'goc-xl': '0 25px 50px -12px rgba(250, 204, 21, 0.4)',
-        'goc-glow': '0 0 30px 0 rgba(250, 204, 21, 0.5)',
-        'goc-glow-lg': '0 0 60px 0 rgba(250, 204, 21, 0.6)',
+        'goc-sm': '0 2px 4px 0 rgba(124, 92, 255, 0.12)',
+        'goc': '0 4px 14px 0 rgba(124, 92, 255, 0.22)',
+        'goc-lg': '0 10px 25px 0 rgba(124, 92, 255, 0.32)',
+        'goc-xl': '0 25px 50px -12px rgba(124, 92, 255, 0.4)',
+        'goc-glow': '0 0 30px 0 rgba(124, 92, 255, 0.5)',
+        'goc-glow-lg': '0 0 60px 0 rgba(34, 211, 238, 0.5)',
       }
     },
   },

@@ -22,7 +22,7 @@ function CopyButton({ value, label }: { value: string; label: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="text-xs font-medium text-yellow-400 hover:text-yellow-300 transition-colors"
+      className="text-xs font-medium text-goc-primary hover:text-goc-secondary transition-colors"
       aria-label={`Copy ${label}`}
       type="button"
     >

@@ -52,8 +52,8 @@ export function SignatureCard() {
       <CardHeader>
         <div className="flex items-center space-x-3">
           <div 
-            className="w-8 h-8 rounded-full flex items-center justify-center text-black font-bold text-sm"
-            style={{ background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)' }}
+            className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
+            style={{ background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)' }}
           >
             3
           </div>

@@ -18,21 +18,12 @@
   --goc-dark-200: #737373;
   --goc-dark-100: #a3a3a3;
   
-  /* Metallic accent system */
-  --goc-gold-900: #92400e;
-  --goc-gold-800: #a16207;
-  --goc-gold-700: #b45309;
-  --goc-gold-600: #ca8a04;
-  --goc-gold-500: #eab308;
-  --goc-gold-400: #facc15;
-  --goc-gold-300: #fde047;
-  --goc-gold-200: #fef08a;
-  --goc-gold-100: #fefce8;
-  
   /* Accent colors */
-  --goc-accent-primary: #fbbf24;
-  --goc-accent-secondary: #f59e0b;
-  --goc-accent-tertiary: #d97706;
+  --goc-primary: #7c5cff;
+  --goc-secondary: #22d3ee;
+  --goc-accent-primary: #7c5cff;
+  --goc-accent-secondary: #22d3ee;
+  --goc-accent-tertiary: #5b8cff;
   
   /* Text colors */
   --goc-text-primary: #ffffff;

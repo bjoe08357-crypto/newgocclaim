@@ -2,12 +2,20 @@ import { ethers } from 'ethers';
 import { TOKEN_ADDRESS, DISTRIBUTION_WALLET } from '@/config/token';
 // import { prisma } from './prisma'; // TODO: Enable after DB migration
 
-const RPC_URL = process.env.RPC_URL;
+const RAW_RPC_URL = process.env.RPC_URL || process.env.NEXT_PUBLIC_RPC_URL;
+const DEFAULT_RPC_URL = 'https://rpc.ankr.com/eth';
+const isPlaceholderRpc =
+  !RAW_RPC_URL ||
+  RAW_RPC_URL.includes('your-api-key') ||
+  RAW_RPC_URL.includes('dummy-api-key');
+const RPC_URL = isPlaceholderRpc ? DEFAULT_RPC_URL : RAW_RPC_URL;
 const DISTRIBUTOR_PRIVATE_KEY = process.env.DISTRIBUTOR_PRIVATE_KEY;
 const TOKEN_DECIMALS = parseInt(process.env.TOKEN_DECIMALS || '18');
 
-if (!RPC_URL) {
-  throw new Error('RPC_URL environment variable is required');
+if (isPlaceholderRpc) {
+  console.warn('RPC_URL is missing or placeholder. Falling back to public RPC.', {
+    rpcUrl: RAW_RPC_URL,
+  });
 }
 
 if (!DISTRIBUTOR_PRIVATE_KEY) {

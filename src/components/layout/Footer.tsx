@@ -40,7 +40,7 @@ export function Footer({ variant = 'home' }: FooterProps) {
               <a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 Etherscan
               </a>
-              <Link href="/admin" className="hover:text-yellow-400 transition-colors">
+              <Link href="/admin" className="hover:text-goc-primary transition-colors">
                 Admin Login
               </Link>
             </div>
@@ -78,21 +78,21 @@ export function Footer({ variant = 'home' }: FooterProps) {
           <div>
             <h4 className="text-white font-semibold mb-4">Platform</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/claim" className="hover:text-yellow-400 transition-colors">Claim Tokens</Link></li>
+              <li><Link href="/claim" className="hover:text-goc-primary transition-colors">Claim Tokens</Link></li>
               {/* @ts-expect-error - Hash links are valid but types are strict */}
-              <li><Link href="/#how-it-works" className="hover:text-yellow-400 transition-colors">How it Works</Link></li>
+              <li><Link href="/#how-it-works" className="hover:text-goc-primary transition-colors">How it Works</Link></li>
               {/* @ts-expect-error - Hash links are valid but types are strict */}
-              <li><Link href="/#faq" className="hover:text-yellow-400 transition-colors">FAQ</Link></li>
-              <li><Link href="/admin" className="hover:text-yellow-400 transition-colors">Admin Login</Link></li>
+              <li><Link href="/#faq" className="hover:text-goc-primary transition-colors">FAQ</Link></li>
+              <li><Link href="/admin" className="hover:text-goc-primary transition-colors">Admin Login</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-white font-semibold mb-4">Resources</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">Etherscan</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a></li>
+              <li><a href="https://etherscan.io" target="_blank" rel="noopener noreferrer" className="hover:text-goc-primary transition-colors">Etherscan</a></li>
+              <li><a href="#" className="hover:text-goc-primary transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-goc-primary transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
         </div>

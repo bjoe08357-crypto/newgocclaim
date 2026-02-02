@@ -63,7 +63,7 @@ export function ProgressIndicator() {
                   step.completed 
                     ? 'bg-green-500 text-white' 
                     : currentStep === step.id
-                    ? 'bg-yellow-400 text-black'
+                    ? 'bg-goc-primary text-white'
                     : 'bg-gray-600 text-gray-400'
                 }`}
               >

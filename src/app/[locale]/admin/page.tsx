@@ -18,7 +18,7 @@ function AdminDashboard() {
     <div 
       className="min-h-screen"
       style={{ 
-        background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(250, 204, 21, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(234, 179, 8, 0.1) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)'
+        background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 92, 255, 0.18) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(34, 211, 238, 0.12) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)'
       }}
     >
       <Navigation variant="admin" />
@@ -37,7 +37,7 @@ function AdminDashboard() {
           <h1 
             className="text-2xl font-bold mb-2 bg-clip-text text-transparent"
             style={{
-              background: 'linear-gradient(135deg, #facc15 0%, #fde047 100%)',
+              background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}
@@ -68,7 +68,7 @@ function AdminDashboard() {
                 </h2>
                 <button
                   onClick={refresh}
-                  className="text-yellow-400 hover:text-yellow-300 text-sm transition-colors"
+                  className="text-goc-primary hover:text-goc-secondary text-sm transition-colors"
                   disabled={statsLoading}
                 >
                   {statsLoading ? 'Refreshing...' : 'Refresh'}
@@ -81,7 +81,7 @@ function AdminDashboard() {
                   <p className="text-red-400 mb-4">{statsError}</p>
                   <button
                     onClick={refresh}
-                    className="text-yellow-400 hover:text-yellow-300 transition-colors"
+                    className="text-goc-primary hover:text-goc-secondary transition-colors"
                   >
                     Retry
                   </button>
@@ -115,14 +115,14 @@ function AdminDashboard() {
                   <div 
                     className="text-center p-4 rounded-lg border"
                     style={{
-                      backgroundColor: 'rgba(250, 204, 21, 0.1)',
-                      borderColor: 'rgba(250, 204, 21, 0.3)'
+                      backgroundColor: 'rgba(124, 92, 255, 0.12)',
+                      borderColor: 'rgba(124, 92, 255, 0.35)'
                     }}
                   >
-                    <div className="text-2xl font-bold text-yellow-400">
+                    <div className="text-2xl font-bold text-goc-primary">
                       {statsLoading ? '-' : stats?.pendingClaims || 0}
                     </div>
-                    <div className="text-sm text-yellow-300">Pending Claims</div>
+                    <div className="text-sm text-goc-primary/80">Pending Claims</div>
                   </div>
                   <div 
                     className="text-center p-4 rounded-lg border"
@@ -143,14 +143,14 @@ function AdminDashboard() {
                 <div className="mt-4 pt-4 border-t border-gray-700">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-400">Claim Progress:</span>
-                    <span className="text-yellow-400 font-medium">{stats.claimPercentage}%</span>
+                    <span className="text-goc-primary font-medium">{stats.claimPercentage}%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
                     <div 
                       className="h-2 rounded-full transition-all duration-500"
                       style={{
                         width: `${stats.claimPercentage}%`,
-                        background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)'
+                        background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)'
                       }}
                     ></div>
                   </div>
@@ -209,7 +209,7 @@ function AdminDashboard() {
                       defaultValue="50000"
                       min="21000"
                       max="200000"
-                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-goc-primary"
                       placeholder="50000"
                     />
                     <p className="text-xs text-gray-500 mt-1">Range: 21,000 - 200,000</p>
@@ -226,7 +226,7 @@ function AdminDashboard() {
                       min="0.0001"
                       max="0.01"
                       step="0.0001"
-                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-goc-primary"
                       placeholder="0.0002"
                     />
                     <p className="text-xs text-gray-500 mt-1">Range: 0.0001 - 0.01 ETH</p>
@@ -262,7 +262,7 @@ function AdminDashboard() {
                         alert('Error updating settings: ' + error.message);
                       });
                     }}
-                    className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-black font-medium rounded-md transition-colors"
+                    className="px-4 py-2 text-white font-medium rounded-md transition-all bg-gradient-to-r from-goc-primary to-goc-secondary hover:opacity-90"
                   >
                     Update Settings
                   </button>
@@ -314,7 +314,7 @@ function AdminDashboard() {
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-400">Token Contract:</span>
-                <span className="font-mono text-xs text-yellow-400">{TOKEN_ADDRESS}</span>
+                <span className="font-mono text-xs text-goc-primary">{TOKEN_ADDRESS}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-400">Network:</span>

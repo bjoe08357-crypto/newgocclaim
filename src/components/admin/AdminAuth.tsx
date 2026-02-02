@@ -68,7 +68,7 @@ export function AdminAuth({ children }: AdminAuthProps) {
       <div 
         className="min-h-screen flex items-center justify-center"
         style={{ 
-          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(250, 204, 21, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(234, 179, 8, 0.1) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)'
+          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 92, 255, 0.18) 0%, transparent 50%), radial-gradient(ellipse 60% 80% at 50% 120%, rgba(34, 211, 238, 0.12) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #121212 100%)'
         }}
       >
         <div className="w-full max-w-md">
@@ -83,7 +83,7 @@ export function AdminAuth({ children }: AdminAuthProps) {
             <h1 
               className="text-2xl font-bold mb-2 bg-clip-text text-transparent"
               style={{
-                background: 'linear-gradient(135deg, #facc15 0%, #fde047 100%)',
+                background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}
@@ -152,7 +152,7 @@ export function AdminAuth({ children }: AdminAuthProps) {
           onClick={handleLogout}
           variant="outline"
           size="sm"
-          className="bg-gray-800/80 backdrop-blur-sm border-gray-600 hover:border-yellow-400/50"
+          className="bg-gray-800/80 backdrop-blur-sm border-gray-600 hover:border-goc-primary/50"
         >
           Logout
         </Button>

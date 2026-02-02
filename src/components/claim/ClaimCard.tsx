@@ -55,8 +55,8 @@ export function ClaimCard() {
       <CardHeader>
         <div className="flex items-center space-x-3">
           <div 
-            className="w-8 h-8 rounded-full flex items-center justify-center text-black font-bold text-sm shadow-lg shadow-yellow-500/20"
-            style={{ background: 'linear-gradient(135deg, #facc15 0%, #eab308 100%)' }}
+            className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-goc-primary/20"
+            style={{ background: 'linear-gradient(135deg, #7C5CFF 0%, #22D3EE 100%)' }}
           >
             2
           </div>
@@ -68,27 +68,27 @@ export function ClaimCard() {
       <CardContent className="space-y-4">
         {allocation && !allocation.claimed && (
           <div
-            className="relative overflow-hidden border rounded-xl p-6 backdrop-blur-md transition-all duration-300 group hover:border-yellow-500/50"
+            className="relative overflow-hidden border rounded-xl p-6 backdrop-blur-md transition-all duration-300 group hover:border-goc-primary/50"
             style={{
-              background: 'linear-gradient(145deg, rgba(250, 204, 21, 0.05) 0%, rgba(0, 0, 0, 0.4) 100%)',
-              borderColor: 'rgba(250, 204, 21, 0.2)',
-              boxShadow: '0 4px 20px -5px rgba(250, 204, 21, 0.1)'
+              background: 'linear-gradient(145deg, rgba(124, 92, 255, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%)',
+              borderColor: 'rgba(124, 92, 255, 0.25)',
+              boxShadow: '0 4px 20px -5px rgba(124, 92, 255, 0.18)'
             }}
           >
-            <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-yellow-500/10 rounded-full blur-2xl group-hover:bg-yellow-500/20 transition-colors duration-500"></div>
+            <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-goc-secondary/10 rounded-full blur-2xl group-hover:bg-goc-secondary/20 transition-colors duration-500"></div>
             
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-goc-secondary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-goc-primary"></span>
                   </span>
-                  <p className="text-sm font-bold text-yellow-400 uppercase tracking-wider">
+                  <p className="text-sm font-bold text-goc-primary uppercase tracking-wider">
                     {t('readyToClaim')}
                   </p>
                 </div>
-                <div className="px-2 py-1 rounded bg-yellow-500/10 border border-yellow-500/20 text-xs text-yellow-300 font-mono">
+                <div className="px-2 py-1 rounded bg-goc-primary/10 border border-goc-primary/20 text-xs text-goc-primary font-mono">
                   PENDING
                 </div>
               </div>
@@ -98,7 +98,7 @@ export function ClaimCard() {
                   <span className="text-xs text-gray-400 uppercase tracking-wide mb-1">{t('amount')}</span>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-bold text-white tracking-tight">{allocation.amount}</span>
-                    <span className="text-lg font-medium text-yellow-500">{symbol}</span>
+                    <span className="text-lg font-medium text-goc-primary">{symbol}</span>
                   </div>
                 </div>
 
@@ -115,13 +115,13 @@ export function ClaimCard() {
         )}
 
         {allocation?.claimed && !showSuccessState && (
-          <div className="p-4 rounded-xl bg-yellow-500/5 border border-yellow-500/20 flex items-start gap-3">
-            <svg className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="p-4 rounded-xl bg-goc-primary/10 border border-goc-primary/25 flex items-start gap-3">
+            <svg className="w-5 h-5 text-goc-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <div>
-              <h4 className="text-sm font-medium text-yellow-400 mb-1">{t('alreadyClaimed')}</h4>
-              <p className="text-xs text-yellow-500/80">You have claimed all your available tokens. Check back later for new rewards.</p>
+              <h4 className="text-sm font-medium text-goc-primary mb-1">{t('alreadyClaimed')}</h4>
+              <p className="text-xs text-goc-primary/80">You have claimed all your available tokens. Check back later for new rewards.</p>
             </div>
           </div>
         )}
@@ -147,7 +147,7 @@ export function ClaimCard() {
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-white">{item.amount}</span>
-                      <span className="text-xs font-medium text-yellow-500">{item.symbol ?? TOKEN_SYMBOL}</span>
+                      <span className="text-xs font-medium text-goc-primary">{item.symbol ?? TOKEN_SYMBOL}</span>
                     </div>
                     <span className="text-xs text-gray-500 mt-0.5">
                       {item.date ? new Date(item.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : 'Unknown date'}
@@ -215,7 +215,7 @@ export function ClaimCard() {
             onClick={handleClaim}
             loading={loading.claiming}
             disabled={!canClaim}
-            className="w-full py-6 text-lg font-bold shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/20 transition-all duration-300"
+            className="w-full py-6 text-lg font-bold shadow-lg shadow-goc-primary/20 hover:shadow-goc-secondary/30 transition-all duration-300"
           >
             {getButtonText()}
           </Button>
@@ -228,7 +228,7 @@ export function ClaimCard() {
           </div>
           <div className="text-center p-2 rounded-lg bg-white/5">
             <div className="text-xs text-gray-400 mb-1">Speed</div>
-            <div className="text-xs font-medium text-yellow-400">Instant</div>
+            <div className="text-xs font-medium text-goc-secondary">Instant</div>
           </div>
           <div className="text-center p-2 rounded-lg bg-white/5">
             <div className="text-xs text-gray-400 mb-1">Security</div>

@@ -45,7 +45,7 @@ export function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-600 hover:border-yellow-400/50 bg-gray-800/50 backdrop-blur-sm transition-all duration-200 hover:bg-gray-700/50"
+        className="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-600 hover:border-goc-primary/50 bg-gray-800/50 backdrop-blur-sm transition-all duration-200 hover:bg-gray-700/50"
         aria-label={t('language')}
       >
         <span className="text-sm">{localeFlags[locale as keyof typeof localeFlags]}</span>
@@ -75,7 +75,7 @@ export function LanguageSwitcher() {
               key={loc}
               onClick={() => handleLocaleChange(loc)}
               className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-gray-700/50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg ${
-                locale === loc ? 'bg-yellow-400/10 text-yellow-400' : 'text-gray-300'
+                locale === loc ? 'bg-goc-primary/10 text-goc-primary' : 'text-gray-300'
               }`}
             >
               <span className="text-lg">{localeFlags[loc as keyof typeof localeFlags]}</span>
@@ -83,7 +83,7 @@ export function LanguageSwitcher() {
                 {localeNames[loc as keyof typeof localeNames]}
               </span>
               {locale === loc && (
-                <svg className="w-4 h-4 ml-auto text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 ml-auto text-goc-primary" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               )}
