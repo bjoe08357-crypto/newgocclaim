@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Portal Klaim Token GOC - Aman, Cepat, Bebas Gas",
+      "description": "Klaim token GOC Anda dengan aman dan instan. Masukkan email dan alamat Ethereum untuk menerima alokasi tanpa biaya gas."
+    },
+    "claim": {
+      "title": "Klaim Token GOC Anda - Proses 2 Langkah Sederhana",
+      "description": "Ikuti proses aman 2 langkah kami untuk mengklaim alokasi token GOC. Klaim bebas gas dengan verifikasi email dan input alamat."
+    },
+    "admin": {
+      "title": "Dashboard Admin GOC - Kelola Alokasi Token",
+      "description": "Portal admin untuk mengelola alokasi token GOC, memantau kesehatan sistem, dan mengupload data alokasi CSV."
+    }
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Kesalahan",
+    "success": "Berhasil",
+    "cancel": "Batal",
+    "confirm": "Konfirmasi",
+    "close": "Tutup",
+    "next": "Selanjutnya",
+    "previous": "Sebelumnya",
+    "save": "Simpan",
+    "edit": "Edit",
+    "delete": "Hapus",
+    "copy": "Salin",
+    "copied": "Disalin!",
+    "language": "Bahasa"
+  },
+  "navigation": {
+    "home": "Beranda",
+    "claim": "Klaim",
+    "admin": "Admin",
+    "about": "Tentang",
+    "faq": "FAQ",
+    "support": "Dukungan"
+  },
+  "home": {
+    "hero": {
+      "title": "GOC",
+      "subtitle": "Aman • Cepat • Bebas Gas",
+      "description": "Masukkan email dan alamat Ethereum Anda untuk menerima token GOC. Proses ini aman, tanpa biaya gas, dan hanya memakan waktu beberapa menit.",
+      "claimNow": "Klaim Sekarang",
+      "learnMore": "Pelajari Lebih Lanjut"
+    },
+    "features": {
+      "nonCustodial": {
+        "title": "Non-kustodial",
+        "description": "Kunci Anda, token Anda"
+      },
+      "gasFree": {
+        "title": "Bebas gas",
+        "description": "Kami menanggung semua biaya"
+      },
+      "secure": {
+        "title": "Aman",
+        "description": "Diaudit & aman"
+      },
+      "private": {
+        "title": "Privat",
+        "description": "Tidak ada data yang disimpan"
+      }
+    },
+    "stats": {
+      "tokensClaimed": "Token Diklaim",
+      "successRate": "Tingkat Keberhasilan",
+      "gasFees": "Biaya Gas"
+    },
+    "infoBanner": {
+      "evmOnly": "Hanya EVM",
+      "emailRequired": "Email diperlukan",
+      "oneTimeClaim": "Klaim satu kali",
+      "privacyByDesign": "Privasi by design",
+      "supportAvailable": "Dukungan tersedia"
+    },
+    "howItWorks": {
+      "title": "Cara kerjanya",
+      "subtitle": "Klaim Token Anda",
+      "description": "Proses 2-langkah kami yang efisien membuat klaim token GOC Anda cepat, aman, dan benar-benar bebas gas.",
+      "steps": {
+        "enterDetails": {
+          "title": "Masukkan Detail",
+          "description": "Masukkan alamat email Anda untuk menerima kode verifikasi dan konfirmasi alokasi token Anda."
+        },
+        "receiveTokens": {
+          "title": "Terima Token",
+          "description": "Masukkan alamat Ethereum Anda dan klaim token GOC Anda. Semua biaya gas ditanggung oleh kami."
+        }
+      },
+      "startClaim": "Mulai Klaim Anda Sekarang"
+    },
+    "about": {
+      "title": "Dibangun untuk",
+      "subtitle": "Komunitas GOC",
+      "description1": "Portal klaim kami mengutamakan keamanan, privasi, dan pengalaman pengguna di atas segalanya.",
+      "description2": "Kami telah menerapkan praktik keamanan standar industri untuk memastikan token Anda diklaim dengan aman dan efisien, tanpa biaya gas di pihak Anda.",
+      "support24h": "Dukungan",
+      "secure100": "Aman",
+      "gasFees0": "Biaya Gas",
+      "securityFeatures": {
+        "title": "Fitur Keamanan",
+        "encryptedData": {
+          "title": "Data Terenkripsi",
+          "description": "Semua informasi pribadi dienkripsi dan di-hash"
+        },
+        "oneTimeClaims": {
+          "title": "Klaim Satu Kali",
+          "description": "Mencegah klaim duplikat dan penyalahgunaan"
+        },
+        "gasFreeTransfers": {
+          "title": "Transfer Bebas Gas",
+          "description": "Kami menanggung semua biaya transaksi untuk Anda"
+        },
+        "rateLimiting": {
+          "title": "Pembatasan Tingkat",
+          "description": "Perlindungan canggih terhadap serangan otomatis"
+        }
+      }
+    },
+    "faq": {
+      "title": "Ada Pertanyaan?",
+      "subtitle": "Kami Punya Jawabannya",
+      "description": "Temukan jawaban untuk pertanyaan paling umum tentang mengklaim token GOC Anda.",
+      "questions": {
+        "whyVerifyEmail": {
+          "question": "Mengapa saya perlu memverifikasi email saya?",
+          "answer": "Verifikasi email memastikan bahwa hanya penerima yang dimaksudkan yang dapat mengklaim token yang dialokasikan. Ini menambah lapisan keamanan ekstra untuk mencegah klaim yang tidak sah."
+        },
+        "needEth": {
+          "question": "Apakah saya memerlukan ETH untuk biaya gas?",
+          "answer": "Tidak! Portal klaim menanggung semua biaya gas. Anda tidak memerlukan ETH di dompet Anda untuk menerima token GOC."
+        },
+        "noVerificationCode": {
+          "question": "Saya tidak menerima kode verifikasi. Apa yang harus saya lakukan?",
+          "answer": "Periksa folder spam Anda terlebih dahulu. Jika masih tidak melihatnya, tunggu beberapa menit dan coba lagi. Sistem hanya mengirim kode jika alokasi ada untuk email Anda."
+        },
+        "preventAbuse": {
+          "question": "Bagaimana Anda mencegah penyalahgunaan dan klaim ganda?",
+          "answer": "Kami menggunakan beberapa langkah keamanan termasuk pembatasan tingkat, verifikasi captcha, hashing email, dan penegakan klaim satu kali untuk mencegah penyalahgunaan."
+        }
+      },
+      "stillHaveQuestions": "Masih ada pertanyaan?",
+      "supportTeamAvailable": "Tim dukungan kami siap membantu Anda 24/7",
+      "contactSupport": "Hubungi Dukungan"
+    }
+  },
+  "claim": {
+    "title": "Klaim Token GOC Anda",
+    "description": "Masukkan email dan alamat Ethereum tempat Anda ingin menerima token GOC Anda. Proses ini aman, tanpa biaya gas, dan hanya memakan waktu beberapa menit.",
+    "steps": {
+      "addressInput": {
+        "title": "Masukkan Detail",
+        "description": "Masukkan alamat email dan alamat dompet Ethereum Anda",
+        "emailPlaceholder": "Masukkan alamat email Anda",
+        "addressPlaceholder": "0x...",
+        "addressDescription": "Masukkan alamat Ethereum tempat Anda ingin menerima token",
+        "sendCode": "Kirim Kode",
+        "codeSent": "Kami telah mengirim kode 6 digit ke",
+        "enterCode": "Masukkan kode di bawah ini untuk melanjutkan.",
+        "codePlaceholder": "123456",
+        "verifyCode": "Verifikasi",
+        "resendCode": "Kembali",
+        "backToCode": "Kembali",
+        "setAddress": "Atur Alamat",
+        "emailVerified": "Email Terverifikasi",
+        "addressSet": "Alamat Ditetapkan",
+        "noAllocation": "Tidak ada alokasi ditemukan untuk alamat email ini"
+      },
+      "connectWallet": {
+        "title": "Hubungkan Dompet",
+        "description": "Opsional: hubungkan dompet untuk melihat status dan tanda tangan jika diperlukan.",
+        "connectButton": "Hubungkan Dompet",
+        "wrongNetwork": "Jaringan Salah",
+        "disconnect": "Putuskan",
+        "switchNetwork": "Ganti Jaringan",
+        "connectedTo": "Terhubung ke Mainnet"
+      },
+      "claimTokens": {
+        "title": "Klaim GOC",
+        "description": "Selesaikan klaim Anda untuk menerima token",
+        "readyToClaim": "Siap untuk diklaim:",
+        "amount": "Jumlah",
+        "recipient": "Penerima",
+        "claimButton": "Klaim GOC",
+        "claiming": "Mengklaim...",
+        "claimComplete": "🎉 Klaim Selesai!",
+        "tokensSent": "Token berhasil dikirim",
+        "viewOnEtherscan": "Lihat di Etherscan",
+        "alreadyClaimed": "Sudah diklaim",
+        "enterAddressToClaim": "Masukkan alamat untuk klaim",
+        "verifyEmailToClaim": "Verifikasi email untuk klaim",
+        "gasFeesCovered": "• Biaya gas ditanggung oleh portal klaim",
+        "tokensWillAppear": "• Token akan muncul di dompet Anda segera setelah klaim",
+        "oneTimeClaim": "• Ini adalah proses klaim satu kali"
+      }
+    }
+  },
+  "admin": {
+    "title": "Dashboard Admin",
+    "uploadCsv": {
+      "title": "Upload CSV Alokasi",
+      "description": "Upload file CSV yang berisi alamat email dan alokasi token",
+      "selectFile": "Pilih File CSV",
+      "upload": "Upload",
+      "uploading": "Mengupload...",
+      "uploadSuccess": "CSV berhasil diupload",
+      "uploadError": "Gagal mengupload CSV"
+    },
+    "healthBanner": {
+      "tokenHealth": "Kesehatan Token",
+      "healthy": "Sehat",
+      "warning": "Peringatan",
+      "error": "Kesalahan",
+      "balance": "Saldo",
+      "allowance": "Allowance"
+    },
+    "rateLimits": {
+      "title": "Batas Tingkat",
+      "reset": "Reset Batas Tingkat",
+      "resetting": "Mereset...",
+      "resetSuccess": "Batas tingkat berhasil direset",
+      "resetError": "Gagal mereset batas tingkat"
+    }
+  },
+  "errors": {
+    "generic": "Terjadi kesalahan. Silakan coba lagi.",
+    "network": "Kesalahan jaringan. Silakan periksa koneksi Anda.",
+    "walletNotConnected": "Silakan hubungkan dompet Anda terlebih dahulu.",
+    "invalidEmail": "Silakan masukkan alamat email yang valid.",
+    "rateLimited": "Terlalu banyak permintaan. Silakan tunggu sebelum mencoba lagi.",
+    "serverError": "Kesalahan server. Silakan coba lagi nanti.",
+    "unauthorized": "Akses tidak diotorisasi.",
+    "forbidden": "Akses dilarang.",
+    "notFound": "Sumber daya tidak ditemukan.",
+    "validationError": "Kesalahan validasi. Silakan periksa input Anda."
+  }
+}

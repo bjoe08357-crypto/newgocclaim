@@ -1,0 +1,91 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Allocations table - stores the token allocations for each user
+model Allocation {
+  id             String   @id @default(cuid())
+  email_hmac     String
+  amount_wei     String   // Store as string to handle large numbers
+  decimals       Int      @default(18)
+  token_contract String
+  chain          String   @default("ethereum")
+  claimed        Boolean  @default(false)
+  claimed_tx_hash String?
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+
+  @@map("allocations")
+  @@index([email_hmac])
+}
+
+// Bindings table - maps email HMACs to wallet addresses
+model Binding {
+  email_hmac     String   @id
+  wallet_address String
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+
+  @@map("bindings")
+}
+
+// Email codes table - stores verification codes
+model EmailCode {
+  email_hmac String   @id
+  code_hash  String
+  expires_at DateTime
+  attempts   Int      @default(0)
+  used       Boolean  @default(false)
+  created_at DateTime @default(now())
+
+  @@map("email_codes")
+}
+
+// SIWE nonces table - stores nonces for Sign-In with Ethereum
+model SiweNonce {
+  email_hmac String   @id
+  nonce      String
+  issued_at  DateTime @default(now())
+  consumed   Boolean  @default(false)
+
+  @@map("siwe_nonces")
+}
+
+// Email lookup table - stores encrypted emails for admin purposes
+model EmailLookup {
+  email_hmac      String @id
+  email_encrypted String
+  created_at      DateTime @default(now())
+
+  @@map("email_lookup")
+}
+
+// Admin audit log - track admin actions
+model AuditLog {
+  id         String   @id @default(cuid())
+  action     String   // e.g., "csv_upload", "allocation_update", "binding_revoke"
+  details    Json?    // Store additional details as JSON
+  admin_user String?  // Admin username who performed the action
+  created_at DateTime @default(now())
+
+  @@map("audit_logs")
+}
+
+// Gas settings - configurable gas limits and costs
+model GasSettings {
+  id             String   @id @default("default")
+  max_gas_limit  String   @default("50000")
+  max_gas_cost_eth String @default("0.0002")
+  updated_at     DateTime @updatedAt
+  updated_by     String?  // Admin username who updated
+
+  @@map("gas_settings")
+}

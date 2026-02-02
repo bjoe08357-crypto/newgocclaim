@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "home": {
+      "title": "GOC Token Claim Portal - Secure, Fast, Gas-Free",
+      "description": "Claim your GOC tokens securely and instantly. Enter your email and Ethereum address to receive your allocation with zero gas fees."
+    },
+    "claim": {
+      "title": "Claim Your GOC Tokens - Simple 2-Step Process",
+      "description": "Follow our secure 2-step process to claim your GOC token allocation. Gas-free claiming with email verification and address input."
+    },
+    "admin": {
+      "title": "GOC Admin Dashboard - Manage Token Allocations",
+      "description": "Admin portal for managing GOC token allocations, monitoring system health, and uploading CSV allocation data."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "claim": "Claim",
+    "admin": "Admin",
+    "about": "About",
+    "faq": "FAQ",
+    "support": "Support"
+  },
+  "home": {
+    "hero": {
+      "title": "GOC",
+      "subtitle": "Secure • Fast • Gas-Free",
+      "description": "Enter your email and Ethereum address to receive your GOC tokens. The process is secure, gas-free, and takes just a few minutes.",
+      "claimNow": "Claim Now",
+      "learnMore": "Learn More"
+    },
+    "features": {
+      "nonCustodial": {
+        "title": "Non-custodial",
+        "description": "Your keys, your tokens"
+      },
+      "gasFree": {
+        "title": "Gas-free",
+        "description": "We cover all fees"
+      },
+      "secure": {
+        "title": "Secure",
+        "description": "Audited & safe"
+      },
+      "private": {
+        "title": "Private",
+        "description": "No data stored"
+      }
+    },
+    "stats": {
+      "tokensClaimed": "Tokens Claimed",
+      "successRate": "Success Rate",
+      "gasFees": "Gas Fees"
+    },
+    "infoBanner": {
+      "evmOnly": "EVM only",
+      "emailRequired": "Email required",
+      "oneTimeClaim": "One-time claim",
+      "privacyByDesign": "Privacy by design",
+      "supportAvailable": "Support available"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "subtitle": "Claim Your Tokens",
+      "description": "Our streamlined 2-step process makes claiming your GOC tokens quick, secure, and completely gas-free.",
+      "steps": {
+        "enterDetails": {
+          "title": "Enter Details",
+          "description": "Enter your email address to receive a verification code and confirm your token allocation."
+        },
+        "receiveTokens": {
+          "title": "Receive Tokens",
+          "description": "Enter your Ethereum address and claim your GOC tokens. All gas fees are covered by us."
+        }
+      },
+      "startClaim": "Start Your Claim Now"
+    },
+    "about": {
+      "title": "Built for the",
+      "subtitle": "GOC Community",
+      "description1": "Our claim portal prioritizes security, privacy, and user experience above all else.",
+      "description2": "We've implemented industry-standard security practices to ensure your tokens are claimed safely and efficiently, with zero gas fees on your end.",
+      "support24h": "Support",
+      "secure100": "Secure",
+      "gasFees0": "Gas Fees",
+      "securityFeatures": {
+        "title": "Security Features",
+        "encryptedData": {
+          "title": "Encrypted Data",
+          "description": "All personal information is encrypted and hashed"
+        },
+        "oneTimeClaims": {
+          "title": "One-Time Claims",
+          "description": "Prevents duplicate claims and abuse"
+        },
+        "gasFreeTransfers": {
+          "title": "Gas-Free Transfers",
+          "description": "We cover all transaction fees for you"
+        },
+        "rateLimiting": {
+          "title": "Rate Limiting",
+          "description": "Advanced protection against automated attacks"
+        }
+      }
+    },
+    "faq": {
+      "title": "Got Questions?",
+      "subtitle": "We've Got Answers",
+      "description": "Find answers to the most common questions about claiming your GOC tokens.",
+      "questions": {
+        "whyVerifyEmail": {
+          "question": "Why do I need to verify my email?",
+          "answer": "Email verification ensures that only the intended recipient can claim the allocated tokens. It adds an extra layer of security to prevent unauthorized claims."
+        },
+        "needEth": {
+          "question": "Do I need ETH for gas fees?",
+          "answer": "No! The claim portal covers all gas fees. You don't need any ETH in your wallet to receive your GOC tokens."
+        },
+        "noVerificationCode": {
+          "question": "I didn't receive the verification code. What should I do?",
+          "answer": "Check your spam folder first. If you still don't see it, wait a few minutes and try again. The system only sends codes if an allocation exists for your email."
+        },
+        "preventAbuse": {
+          "question": "How do you prevent abuse and multiple claims?",
+          "answer": "We use multiple security measures including rate limiting, captcha verification, email hashing, and one-time claim enforcement to prevent abuse."
+        }
+      },
+      "stillHaveQuestions": "Still have questions?",
+      "supportTeamAvailable": "Our support team is here to help you 24/7",
+      "contactSupport": "Contact Support"
+    }
+  },
+  "claim": {
+    "title": "Claim Your GOC Tokens",
+    "description": "Enter your email and the Ethereum address where you want to receive your GOC tokens. The process is secure, gas-free, and takes just a few minutes.",
+    "steps": {
+      "addressInput": {
+        "title": "Enter Details",
+        "description": "Enter your email address and Ethereum wallet address",
+        "emailPlaceholder": "Enter your email address",
+        "addressPlaceholder": "0x...",
+        "addressDescription": "Enter the Ethereum address where you want to receive your tokens",
+        "sendCode": "Send Code",
+        "codeSent": "We've sent a 6-digit code to",
+        "enterCode": "Enter it below to continue.",
+        "codePlaceholder": "123456",
+        "verifyCode": "Verify",
+        "resendCode": "Back",
+        "backToCode": "Back",
+        "setAddress": "Set Address",
+        "emailVerified": "Email Verified",
+        "addressSet": "Address Set",
+        "noAllocation": "No allocation found for this email address"
+      },
+      "connectWallet": {
+        "title": "Connect Wallet",
+        "description": "Optional: connect your wallet for status visibility and signature prompts if required.",
+        "connectButton": "Connect Wallet",
+        "wrongNetwork": "Wrong Network",
+        "disconnect": "Disconnect",
+        "switchNetwork": "Switch Network",
+        "connectedTo": "Connected to Mainnet"
+      },
+      "claimTokens": {
+        "title": "Claim GOC",
+        "description": "Complete your claim to receive your tokens",
+        "readyToClaim": "Ready to claim:",
+        "amount": "Amount",
+        "recipient": "Recipient",
+        "claimButton": "Claim GOC",
+        "claiming": "Claiming...",
+        "claimComplete": "🎉 Claim Complete!",
+        "tokensSent": "Tokens sent successfully",
+        "viewOnEtherscan": "View on Etherscan",
+        "alreadyClaimed": "Already claimed",
+        "enterAddressToClaim": "Enter address to claim",
+        "verifyEmailToClaim": "Verify email to claim",
+        "gasFeesCovered": "• Gas fees are covered by the claim portal",
+        "tokensWillAppear": "• Tokens will appear in your wallet shortly after claiming",
+        "oneTimeClaim": "• This is a one-time claim process"
+      }
+    }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "uploadCsv": {
+      "title": "Upload Allocation CSV",
+      "description": "Upload a CSV file containing email addresses and token allocations",
+      "selectFile": "Select CSV File",
+      "upload": "Upload",
+      "uploading": "Uploading...",
+      "uploadSuccess": "CSV uploaded successfully",
+      "uploadError": "Failed to upload CSV"
+    },
+    "healthBanner": {
+      "tokenHealth": "Token Health",
+      "healthy": "Healthy",
+      "warning": "Warning",
+      "error": "Error",
+      "balance": "Balance",
+      "allowance": "Allowance"
+    },
+    "rateLimits": {
+      "title": "Rate Limits",
+      "reset": "Reset Rate Limits",
+      "resetting": "Resetting...",
+      "resetSuccess": "Rate limits reset successfully",
+      "resetError": "Failed to reset rate limits"
+    }
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "walletNotConnected": "Please connect your wallet first.",
+    "invalidEmail": "Please enter a valid email address.",
+    "rateLimited": "Too many requests. Please wait before trying again.",
+    "serverError": "Server error. Please try again later.",
+    "unauthorized": "Unauthorized access.",
+    "forbidden": "Access forbidden.",
+    "notFound": "Resource not found.",
+    "validationError": "Validation error. Please check your input."
+  }
+}

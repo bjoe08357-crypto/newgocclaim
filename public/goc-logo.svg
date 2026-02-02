@@ -1,0 +1,7 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="28" fill="#2563EB"/>
+  <circle cx="86" cy="34" r="10" fill="#14B8A6"/>
+  <path d="M34 68C34 55.8497 43.8497 46 56 46H70C82.1503 46 92 55.8497 92 68V70C92 82.1503 82.1503 92 70 92H56C43.8497 92 34 82.1503 34 70V68Z" fill="white" fill-opacity="0.18"/>
+  <path d="M41 70C41 61.7157 47.7157 55 56 55H69C77.2843 55 84 61.7157 84 70V70C84 78.2843 77.2843 85 69 85H56C47.7157 85 41 78.2843 41 70V70Z" fill="white"/>
+  <text x="60" y="73" text-anchor="middle" font-size="24" font-family="Inter, Arial, sans-serif" fill="#0F172A" font-weight="700">GOC</text>
+</svg>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GOC Token Claim Portal - Setup Guide</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1 { color: #2563eb; border-bottom: 3px solid #2563eb; padding-bottom: 10px; }
+        h2 { color: #1f2937; margin-top: 30px; }
+        h3 { color: #374151; }
+        code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-family: 'Monaco', monospace; }
+        pre { background: #1f2937; color: #f9fafb; padding: 15px; border-radius: 8px; overflow-x: auto; }
+        .checklist { background: #ecfdf5; padding: 15px; border-left: 4px solid #10b981; margin: 20px 0; }
+        .warning { background: #fef3c7; padding: 15px; border-left: 4px solid #f59e0b; margin: 20px 0; }
+        .success { background: #ecfdf5; padding: 15px; border-left: 4px solid #10b981; margin: 20px 0; }
+        ul { padding-left: 20px; }
+        li { margin: 8px 0; }
+        .step { background: #f8fafc; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+
+<h1>🚀 GOC Token Claim Portal - Setup Guide</h1>
+
+<div class="success">
+<h2>What This Is</h2>
+<p>A secure website where users can claim their GOC tokens by connecting their wallet and verifying their email address. The system handles everything automatically and covers gas fees for users.</p>
+</div>
+
+<h2>🚀 Quick Setup Checklist (30 minutes)</h2>
+
+<div class="step">
+<h3>Step 1: Set Up Database (5 minutes)</h3>
+<p><strong>What it does:</strong> Stores user email addresses and token allocations securely</p>
+
+<p><strong>Easy Cloud Setup (Recommended):</strong></p>
+<ol>
+<li>Go to <a href="https://supabase.com">supabase.com</a></li>
+<li>Click "Start your project" → Sign up with GitHub</li>
+<li>Create new project (choose any name, strong password)</li>
+<li>Wait 2 minutes for setup</li>
+<li>Go to Settings → Database → Copy the connection string</li>
+<li>Save this - you'll need it in Step 4</li>
+</ol>
+</div>
+
+<div class="step">
+<h3>Step 2: Get Blockchain Connection (5 minutes)</h3>
+<p><strong>What it does:</strong> Connects to Ethereum network to send tokens</p>
+
+<ol>
+<li>Go to <a href="https://alchemy.com">alchemy.com</a></li>
+<li>Sign up → Create your first app</li>
+<li>Choose "Ethereum" → "Mainnet"</li>
+<li>Name it "GOC Claim Portal"</li>
+<li>Copy the API Key from the dashboard</li>
+<li>Save this - you'll need it in Step 4</li>
+</ol>
+</div>
+
+<div class="step">
+<h3>Step 3: Set Up Email Sending (5 minutes)</h3>
+<p><strong>What it does:</strong> Sends verification codes to users</p>
+
+<p><strong>Gmail Setup (Easiest):</strong></p>
+<ol>
+<li>Use a Gmail account (create new one if needed: claims@yourcompany.com)</li>
+<li>Enable 2-Factor Authentication on the Gmail account</li>
+<li>Go to Google Account Settings → Security → App passwords</li>
+<li>Generate app password for "Mail"</li>
+<li>Save the 16-character password - you'll need it in Step 4</li>
+</ol>
+</div>
+
+<div class="step">
+<h3>Step 4: Configure the System (10 minutes)</h3>
+<p><strong>What it does:</strong> Tells the system how to connect to everything</p>
+
+<p>In your project folder, find the file <code>.env.local</code> and fill in these values:</p>
+
+<pre># Database (from Step 1)
+DATABASE_URL=your-supabase-connection-string
+
+# Security (generated automatically - don't change)
+PEPPER=57e5b1bcd2a0453156781cb1cbe399c77f26fd9a95ae2c230ea5e4997d2ec5ec
+JWT_SECRET=9555ff94c5690098e7d4c8930733f13242320b9fb90b37a1f4a431e945080ce2
+
+# Your Token Details
+GOC_TOKEN_ADDRESS=0xYourActualTokenContractAddress
+GOC_DISTRIBUTION_WALLET=0xYourDistributionWallet
+TOKEN_DECIMALS=18
+DISTRIBUTOR_PRIVATE_KEY=0xYourDistributorWalletPrivateKey
+
+# Blockchain Connection (from Step 2)
+RPC_URL=https://eth-mainnet.g.alchemy.com/v2/your-alchemy-api-key
+
+# Email Settings (from Step 3)
+EMAIL_FROM=claims@yourcompany.com
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=claims@yourcompany.com
+SMTP_PASS=your-16-character-app-password
+
+# Website Settings
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_GOC_TOKEN_ADDRESS=0xYourActualTokenContractAddress
+NEXT_PUBLIC_GOC_DISTRIBUTION_WALLET=0xYourDistributionWallet
+
+# Admin Login
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=YourSecurePassword123!</pre>
+</div>
+
+<div class="step">
+<h3>Step 5: Start the System (5 minutes)</h3>
+<p><strong>What it does:</strong> Launches your claim portal</p>
+
+<p>Run these commands in order:</p>
+<pre>npm run db:push
+npm run dev</pre>
+
+<div class="success">
+<p><strong>✅ Success!</strong> Your portal is now running at: http://localhost:3000</p>
+</div>
+</div>
+
+<h2>💰 Wallet Setup (IMPORTANT)</h2>
+
+<div class="warning">
+<p><strong>Create a Distributor Wallet:</strong></p>
+<ol>
+<li>Create a NEW wallet (don't use existing ones)</li>
+<li>Fund it with:
+    <ul>
+        <li>Your GOC tokens (total amount you want to distribute)</li>
+        <li>ETH for gas fees (approximately 0.1 ETH should cover hundreds of claims)</li>
+    </ul>
+</li>
+<li>Export the private key and use it for <code>DISTRIBUTOR_PRIVATE_KEY</code></li>
+</ol>
+<p><strong>Security Note:</strong> This wallet only holds tokens for distribution. Keep the private key secure.</p>
+</div>
+
+<h2>🎯 How Users Claim Tokens</h2>
+
+<ol>
+<li><strong>User visits your website</strong></li>
+<li><strong>Connects their wallet</strong> (MetaMask, etc.)</li>
+<li><strong>Enters their email</strong> and completes captcha</li>
+<li><strong>Receives verification code</strong> via email</li>
+<li><strong>Signs a message</strong> to prove wallet ownership</li>
+<li><strong>Clicks "Claim"</strong> - tokens sent automatically</li>
+</ol>
+
+<p><strong>User Experience:</strong> Simple, secure, no gas fees for users.</p>
+
+<h2>🛡️ Security Features</h2>
+
+<div class="checklist">
+<p>✅ <strong>Email Privacy:</strong> Email addresses are encrypted and hashed<br>
+✅ <strong>One-Time Claims:</strong> Each person can only claim once<br>
+✅ <strong>Rate Limiting:</strong> Prevents spam and abuse<br>
+✅ <strong>Captcha Protection:</strong> Blocks automated attacks<br>
+✅ <strong>Audit Trail:</strong> All actions are logged</p>
+</div>
+
+<h2>📋 Launch Checklist</h2>
+
+<div class="checklist">
+<p>Before going live:</p>
+<ul>
+<li>☐ Database is set up and accessible</li>
+<li>☐ Email sending works (test it!)</li>
+<li>☐ Distributor wallet has tokens and ETH</li>
+<li>☐ Token contract address is correct</li>
+<li>☐ Admin panel works</li>
+<li>☐ Test claim flow works end-to-end</li>
+<li>☐ Website URL is configured correctly</li>
+<li>☐ Backup of allocation data exists</li>
+</ul>
+</div>
+
+<div class="success">
+<p><strong>Estimated Total Setup Time:</strong> 30 minutes<br>
+<strong>Technical Skill Required:</strong> Basic (copy/paste configuration)<br>
+<strong>Ongoing Maintenance:</strong> Minimal (monitor wallet balance)</p>
+</div>
+
+<hr>
+<p><em>This system is production-ready and handles all the technical complexity automatically. Users get a smooth, secure experience while you maintain full control through the admin panel.</em></p>
+
+</body>
+</html>
