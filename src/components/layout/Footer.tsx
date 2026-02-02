@@ -27,7 +27,7 @@ export function Footer({ variant = 'home' }: FooterProps) {
                   className="h-6 w-auto object-contain"
                 />
               </Link>
-              <span className="text-goc-muted text-sm">© 2025 GOC</span>
+              <span className="text-goc-muted text-sm">© 2026 by GOC</span>
             </div>
             <div className="flex space-x-6 text-sm text-goc-muted">
               <Link href="/" className="hover:text-goc-ink transition-colors">{t('home')}</Link>
@@ -83,7 +83,7 @@ export function Footer({ variant = 'home' }: FooterProps) {
         
         <div className="border-t border-goc-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-goc-muted">
-            © 2025 GOC. All rights reserved.
+            © 2026 by GOC. All rights reserved.
           </div>
           <div className="flex space-x-6">
             {/* Social icons could go here */}
