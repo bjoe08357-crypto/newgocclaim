@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Card, CardHeader, CardContent } from '@/components/ui/Card';
+import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
+import { GradientButton } from '@/components/ui/GradientButton';
 import { Input } from '@/components/ui/Input';
 import { Alert } from '@/components/ui/Alert';
 
@@ -84,13 +85,18 @@ export function AdminAuth({ children }: AdminAuthProps) {
             </p>
           </div>
 
-          <Card>
-            <CardHeader>
-              <h2 className="text-lg font-semibold text-goc-ink text-center">
-                Authentication Required
-              </h2>
-            </CardHeader>
-            <CardContent>
+          <GlassCard>
+            <div className="p-6 space-y-5">
+              <div className="text-center space-y-2">
+                <h2 className="text-lg font-semibold text-goc-ink">
+                  Authentication Required
+                </h2>
+                <p className="text-xs text-goc-muted">
+                  Credentials are set via environment variables: <span className="font-mono">ADMIN_USERNAME</span> and{' '}
+                  <span className="font-mono">ADMIN_PASSWORD</span>.
+                </p>
+              </div>
+
               <form onSubmit={handleLogin} className="space-y-4">
                 <Input
                   type="text"
@@ -116,16 +122,16 @@ export function AdminAuth({ children }: AdminAuthProps) {
                   </Alert>
                 )}
 
-                <Button
+                <GradientButton
                   type="submit"
                   loading={loading}
                   className="w-full"
                 >
                   Login
-                </Button>
+                </GradientButton>
               </form>
-            </CardContent>
-          </Card>
+            </div>
+          </GlassCard>
         </div>
       </div>
     );

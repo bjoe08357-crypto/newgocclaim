@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent } from '@/components/ui/Card';
+import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
+import { GradientButton } from '@/components/ui/GradientButton';
 import { Alert } from '@/components/ui/Alert';
 import { useTranslations } from 'next-intl';
 
@@ -72,16 +73,16 @@ bob@example.com,2500
 charlie@example.com,750.25`;
 
   return (
-    <Card>
-      <CardHeader>
-        <h2 className="text-lg font-semibold text-goc-ink">
-          {t('title')}
-        </h2>
-        <p className="text-sm text-goc-muted">
-          {t('description')}
-        </p>
-      </CardHeader>
-      <CardContent className="space-y-4">
+    <GlassCard>
+      <div className="p-6 space-y-4">
+        <div>
+          <h2 className="text-lg font-semibold text-goc-ink">
+            {t('title')}
+          </h2>
+          <p className="text-sm text-goc-muted">
+            {t('description')}
+          </p>
+        </div>
         <div>
           <label htmlFor="csv-data" className="block text-sm font-medium text-goc-ink mb-2">
             CSV Data
@@ -121,14 +122,14 @@ charlie@example.com,750.25`;
         )}
 
         <div className="flex space-x-3">
-          <Button
+          <GradientButton
             onClick={handleUpload}
             loading={uploading}
             disabled={!csvData.trim()}
             className="flex-1"
           >
             {uploading ? t('uploading') : t('upload')}
-          </Button>
+          </GradientButton>
           <Button
             variant="outline"
             onClick={() => {
@@ -140,13 +141,21 @@ charlie@example.com,750.25`;
           </Button>
         </div>
 
+        <div className="rounded-xl border border-goc-border bg-goc-surface/70 p-3 text-xs font-mono text-goc-ink">
+          email,amount
+          <br />
+          alice@example.com,1000.5
+          <br />
+          bob@example.com,2500
+        </div>
+
         <div className="text-xs text-goc-muted space-y-1">
           <p>• Existing unclaimed allocations will be updated</p>
           <p>• Already claimed allocations will be skipped</p>
           <p>• Duplicate emails in CSV will use the last occurrence</p>
           <p>• Invalid rows will be skipped and reported</p>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </GlassCard>
   );
 }

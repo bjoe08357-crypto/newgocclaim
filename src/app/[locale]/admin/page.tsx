@@ -5,6 +5,7 @@ import { AdminAuth } from '@/components/admin/AdminAuth';
 import { HealthBanner } from '@/components/admin/HealthBanner';
 import { CsvUploadCard } from '@/components/admin/CsvUploadCard';
 import { Card, CardHeader, CardContent } from '@/components/ui/Card';
+import { GlassCard } from '@/components/ui/GlassCard';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import { useTranslations } from 'next-intl';
@@ -17,7 +18,7 @@ function AdminDashboard() {
   const t = useTranslations('admin');
   const { stats, loading: statsLoading, error: statsError, refresh } = useAdminStats();
   return (
-    <div className="min-h-screen bg-goc-surface-alt">
+    <div className="min-h-screen bg-[#0b1020]">
       <Navigation variant="admin" />
 
       {/* Main Content */}
@@ -44,14 +45,56 @@ function AdminDashboard() {
           <HealthBanner />
         </div>
 
+        {/* Admin Guide */}
+        <div className="mb-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <GlassCard>
+            <div className="p-5 space-y-3">
+              <p className="text-xs uppercase tracking-wide text-goc-muted">Step 1</p>
+              <h3 className="text-base font-semibold text-goc-ink">Prepare CSV</h3>
+              <p className="text-sm text-goc-muted">
+                Create a CSV with <span className="font-mono">email,amount</span> columns.
+              </p>
+              <div className="rounded-lg border border-goc-border bg-goc-surface/70 p-2 text-xs font-mono text-goc-ink">
+                email,amount<br />alice@example.com,1000.5<br />bob@example.com,2500
+              </div>
+            </div>
+          </GlassCard>
+
+          <GlassCard>
+            <div className="p-5 space-y-3">
+              <p className="text-xs uppercase tracking-wide text-goc-muted">Step 2</p>
+              <h3 className="text-base font-semibold text-goc-ink">Upload Allocations</h3>
+              <p className="text-sm text-goc-muted">
+                Paste CSV into the upload box and click Upload. Existing unclaimed rows update automatically.
+              </p>
+              <p className="text-xs text-goc-muted">
+                Tip: Use one row per email. Latest duplicate wins.
+              </p>
+            </div>
+          </GlassCard>
+
+          <GlassCard>
+            <div className="p-5 space-y-3">
+              <p className="text-xs uppercase tracking-wide text-goc-muted">Step 3</p>
+              <h3 className="text-base font-semibold text-goc-ink">Verify & Monitor</h3>
+              <p className="text-sm text-goc-muted">
+                Check system health and stats to confirm allocations, pending claims, and total distributed tokens.
+              </p>
+              <p className="text-xs text-goc-muted">
+                Use the Gas Fee settings section to cap gas costs for claims.
+              </p>
+            </div>
+          </GlassCard>
+        </div>
+
         {/* Dashboard Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* CSV Upload */}
           <CsvUploadCard />
 
           {/* Quick Stats */}
-          <Card>
-            <CardHeader>
+          <GlassCard>
+            <div className="p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-goc-ink">
                   Quick Stats
@@ -64,8 +107,6 @@ function AdminDashboard() {
                   {statsLoading ? 'Refreshing...' : 'Refresh'}
                 </button>
               </div>
-            </CardHeader>
-            <CardContent>
               {statsError ? (
                 <div className="text-center py-8">
                   <p className="text-red-600 mb-4">{statsError}</p>
@@ -78,35 +119,35 @@ function AdminDashboard() {
                 </div>
               ) : (
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 rounded-lg border border-blue-100 bg-blue-50">
-                    <div className="text-2xl font-bold text-blue-700">
+                  <div className="text-center p-4 rounded-lg border border-goc-border bg-goc-surface/60">
+                    <div className="text-2xl font-bold text-goc-ink">
                       {statsLoading ? '-' : stats?.totalAllocations || 0}
                     </div>
-                    <div className="text-sm text-blue-700/80">Total Allocations</div>
+                    <div className="text-xs text-goc-muted uppercase tracking-wide">Total Allocations</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg border border-green-100 bg-green-50">
-                    <div className="text-2xl font-bold text-green-700">
+                  <div className="text-center p-4 rounded-lg border border-goc-border bg-goc-surface/60">
+                    <div className="text-2xl font-bold text-goc-ink">
                       {statsLoading ? '-' : stats?.claimedAllocations || 0}
                     </div>
-                    <div className="text-sm text-green-700/80">Claims Completed</div>
+                    <div className="text-xs text-goc-muted uppercase tracking-wide">Claims Completed</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg border border-amber-100 bg-amber-50">
-                    <div className="text-2xl font-bold text-amber-700">
+                  <div className="text-center p-4 rounded-lg border border-goc-border bg-goc-surface/60">
+                    <div className="text-2xl font-bold text-goc-ink">
                       {statsLoading ? '-' : stats?.pendingClaims || 0}
                     </div>
-                    <div className="text-sm text-amber-700/80">Pending Claims</div>
+                    <div className="text-xs text-goc-muted uppercase tracking-wide">Pending Claims</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg border border-purple-100 bg-purple-50">
-                    <div className="text-2xl font-bold text-purple-700">
+                  <div className="text-center p-4 rounded-lg border border-goc-border bg-goc-surface/60">
+                    <div className="text-2xl font-bold text-goc-ink">
                       {statsLoading ? '-' : `${stats?.totalValue?.toLocaleString() || 0}`}
                     </div>
-                    <div className="text-sm text-purple-700/80">Total {TOKEN_SYMBOL}</div>
+                    <div className="text-xs text-goc-muted uppercase tracking-wide">Total {TOKEN_SYMBOL}</div>
                   </div>
                 </div>
               )}
               
               {stats && (
-                <div className="mt-4 pt-4 border-t border-goc-border">
+                <div className="mt-4 pt-4 border-t border-goc-border/70">
                   <div className="flex justify-between text-sm">
                     <span className="text-goc-muted">Claim Progress:</span>
                     <span className="text-goc-primary font-medium">{stats.claimPercentage}%</span>
@@ -116,14 +157,14 @@ function AdminDashboard() {
                       className="h-2 rounded-full transition-all duration-500"
                       style={{
                         width: `${stats.claimPercentage}%`,
-                        background: 'linear-gradient(135deg, #2563eb 0%, #14b8a6 100%)'
+                        background: 'linear-gradient(135deg, #7c5cff 0%, #22d3ee 100%)'
                       }}
                     ></div>
                   </div>
                 </div>
               )}
-            </CardContent>
-          </Card>
+            </div>
+          </GlassCard>
         </div>
 
         {/* Allocations Table Placeholder */}
