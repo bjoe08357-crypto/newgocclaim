@@ -12,10 +12,10 @@ export function Pill({ variant = 'neutral', size = 'sm', children, className }: 
   const baseClasses = 'inline-flex items-center font-medium rounded-full';
   
   const variantClasses = {
-    success: 'text-green-700 border border-green-200 bg-green-50',
-    info: 'text-blue-700 border border-blue-200 bg-blue-50',
-    warning: 'text-amber-700 border border-amber-200 bg-amber-50',
-    error: 'text-red-700 border border-red-200 bg-red-50',
+    success: 'text-green-300 border border-green-500/40 bg-green-500/10',
+    info: 'text-blue-300 border border-blue-500/40 bg-blue-500/10',
+    warning: 'text-amber-300 border border-amber-500/40 bg-amber-500/10',
+    error: 'text-rose-300 border border-rose-500/40 bg-rose-500/10',
     neutral: 'text-goc-muted border border-goc-border bg-goc-surface-alt',
   };
 

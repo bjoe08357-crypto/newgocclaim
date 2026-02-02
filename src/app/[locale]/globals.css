@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --goc-primary: #2563eb;
-  --goc-secondary: #14b8a6;
-  --goc-border: #e2e8f0;
-  --goc-surface: #ffffff;
-  --goc-surface-alt: #f1f5f9;
-  --goc-muted: #64748b;
+  --background: #0b1020;
+  --foreground: #e2e8f0;
+  --goc-primary: #7c5cff;
+  --goc-secondary: #22d3ee;
+  --goc-border: #1e293b;
+  --goc-surface: #0f172a;
+  --goc-surface-alt: #111827;
+  --goc-muted: #94a3b8;
 }
 
 @theme inline {

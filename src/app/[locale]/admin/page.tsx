@@ -175,7 +175,7 @@ function AdminDashboard() {
                       defaultValue="50000"
                       min="21000"
                       max="200000"
-                      className="w-full px-3 py-2 bg-white border border-goc-border rounded-md text-goc-ink focus:outline-none focus:ring-2 focus:ring-goc-primary/30"
+                      className="w-full px-3 py-2 bg-goc-surface border border-goc-border rounded-md text-goc-ink focus:outline-none focus:ring-2 focus:ring-goc-primary/30"
                       placeholder="50000"
                     />
                     <p className="text-xs text-goc-muted mt-1">Range: 21,000 - 200,000</p>
@@ -192,7 +192,7 @@ function AdminDashboard() {
                       min="0.0001"
                       max="0.01"
                       step="0.0001"
-                      className="w-full px-3 py-2 bg-white border border-goc-border rounded-md text-goc-ink focus:outline-none focus:ring-2 focus:ring-goc-primary/30"
+                      className="w-full px-3 py-2 bg-goc-surface border border-goc-border rounded-md text-goc-ink focus:outline-none focus:ring-2 focus:ring-goc-primary/30"
                       placeholder="0.0002"
                     />
                     <p className="text-xs text-goc-muted mt-1">Range: 0.0001 - 0.01 ETH</p>
@@ -251,7 +251,7 @@ function AdminDashboard() {
                         alert('Error loading settings: ' + error.message);
                       });
                     }}
-                    className="px-4 py-2 bg-goc-surface-alt hover:bg-goc-border text-goc-ink font-medium rounded-md transition-colors border border-goc-border"
+                    className="px-4 py-2 bg-goc-surface hover:bg-goc-border text-goc-ink font-medium rounded-md transition-colors border border-goc-border"
                   >
                     Load Current
                   </button>

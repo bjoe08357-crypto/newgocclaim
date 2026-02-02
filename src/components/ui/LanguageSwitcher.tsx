@@ -45,7 +45,7 @@ export function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg border border-goc-border bg-white hover:border-goc-primary/40 transition-all duration-200 shadow-goc-sm"
+        className="flex items-center gap-2 px-3 py-2 rounded-lg border border-goc-border bg-goc-surface hover:border-goc-primary/50 transition-all duration-200 shadow-goc-sm"
         aria-label={t('language')}
       >
         <span className="text-sm">{localeFlags[locale as keyof typeof localeFlags]}</span>
@@ -64,14 +64,14 @@ export function LanguageSwitcher() {
 
       {isOpen && (
         <div 
-          className="absolute top-full mt-2 right-0 bg-white border border-goc-border rounded-lg shadow-goc z-50 min-w-[180px]"
+          className="absolute top-full mt-2 right-0 bg-goc-surface border border-goc-border rounded-lg shadow-goc z-50 min-w-[180px]"
         >
           {routing.locales.map((loc) => (
             <button
               key={loc}
               onClick={() => handleLocaleChange(loc)}
               className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-goc-surface-alt transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg ${
-                locale === loc ? 'bg-blue-50 text-goc-primary' : 'text-goc-muted'
+                locale === loc ? 'bg-goc-primary/10 text-goc-primary' : 'text-goc-muted'
               }`}
             >
               <span className="text-lg">{localeFlags[loc as keyof typeof localeFlags]}</span>

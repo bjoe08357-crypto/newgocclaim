@@ -47,7 +47,7 @@ export function Navigation({ showCTA = true }: NavigationProps) {
     return (
       <Link href="/claim">
         <button 
-          className="px-6 py-2.5 rounded-xl font-semibold text-white transition-all duration-200 shadow-goc hover:shadow-goc-lg bg-goc-primary hover:bg-blue-700"
+          className="px-6 py-2.5 rounded-xl font-semibold text-white transition-all duration-200 shadow-goc hover:shadow-goc-lg bg-goc-primary hover:bg-indigo-500"
         >
           Start Claiming
         </button>
@@ -58,7 +58,7 @@ export function Navigation({ showCTA = true }: NavigationProps) {
 
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-goc-border/70 bg-white/80 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-goc-border/70 bg-goc-surface/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center group">
@@ -70,8 +70,8 @@ export function Navigation({ showCTA = true }: NavigationProps) {
               className="h-10 w-10 object-contain"
             />
             <div className="ml-3">
-              <div className="text-sm font-semibold text-goc-muted">GOC Claim Portal</div>
-              <div className="text-xs text-goc-muted/70">Secure token distribution</div>
+              <div className="text-sm font-semibold text-goc-ink">GOC Claim Portal</div>
+              <div className="text-xs text-goc-muted">Secure token distribution</div>
             </div>
           </Link>
           

@@ -141,7 +141,7 @@ export function AdminAuth({ children }: AdminAuthProps) {
           onClick={handleLogout}
           variant="outline"
           size="sm"
-          className="bg-white border-goc-border hover:border-goc-primary/40"
+          className="bg-goc-surface border-goc-border hover:border-goc-primary/40"
         >
           Logout
         </Button>

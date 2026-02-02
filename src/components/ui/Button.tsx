@@ -17,12 +17,12 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-goc-primary/30 focus:ring-offset-white disabled:opacity-50 disabled:pointer-events-none';
+  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-goc-primary/40 focus:ring-offset-goc-surface disabled:opacity-50 disabled:pointer-events-none';
   
   const variantClasses = {
-    primary: 'bg-goc-primary hover:bg-blue-700 text-white shadow-goc font-semibold',
-    secondary: 'bg-goc-secondary/10 text-goc-ink border border-goc-secondary/30 hover:bg-goc-secondary/15 hover:border-goc-secondary/50',
-    outline: 'border border-goc-border text-goc-ink hover:border-goc-primary/40 hover:text-goc-primary',
+    primary: 'bg-goc-primary hover:bg-indigo-500 text-white shadow-goc font-semibold',
+    secondary: 'bg-goc-secondary/15 text-goc-ink border border-goc-secondary/40 hover:bg-goc-secondary/25 hover:border-goc-secondary/60',
+    outline: 'border border-goc-border text-goc-ink hover:border-goc-primary/50 hover:text-white',
     ghost: 'text-goc-muted hover:text-goc-ink hover:bg-goc-surface-alt',
   };
 

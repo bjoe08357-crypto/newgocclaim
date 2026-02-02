@@ -80,7 +80,7 @@ export function ClaimCard() {
               </div>
 
               <div className="space-y-4">
-                <div className="flex flex-col p-4 rounded-lg bg-white border border-goc-border">
+                <div className="flex flex-col p-4 rounded-lg bg-goc-surface border border-goc-border">
                   <span className="text-xs text-goc-muted uppercase tracking-wide mb-1">{t('amount')}</span>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-bold text-goc-ink tracking-tight">{allocation.amount}</span>
@@ -88,7 +88,7 @@ export function ClaimCard() {
                   </div>
                 </div>
 
-                <div className="flex flex-col p-3 rounded-lg bg-white border border-goc-border">
+                <div className="flex flex-col p-3 rounded-lg bg-goc-surface border border-goc-border">
                   <span className="text-xs text-goc-muted uppercase tracking-wide mb-1">{t('recipient')}</span>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-500"></div>
@@ -145,7 +145,7 @@ export function ClaimCard() {
                       href={`https://etherscan.io/tx/${item.txHash}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white text-xs font-medium text-goc-muted hover:text-goc-ink hover:border-goc-primary/30 transition-all duration-200 group-hover:border-goc-border border border-goc-border"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-goc-surface text-xs font-medium text-goc-muted hover:text-goc-ink hover:border-goc-primary/30 transition-all duration-200 group-hover:border-goc-border border border-goc-border"
                     >
                       <span>TX</span>
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
